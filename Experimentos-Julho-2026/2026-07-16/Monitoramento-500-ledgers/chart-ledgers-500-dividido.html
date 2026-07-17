@@ -26,6 +26,9 @@ h4{color:#e94560;font-size:14px;margin:15px 0 5px 0}
 .toc{padding:15px;margin:15px 0}
 .toc a{color:#81b29a;text-decoration:none;font-size:13px}
 .toc a:hover{color:#e94560}
+.chart-legend{display:flex;flex-wrap:wrap;gap:10px 20px;justify-content:center;padding:10px 16px;margin-top:8px;background:rgba(30,40,60,0.6);border-radius:6px;border:1px solid #16213e}
+.chart-legend span{display:flex;align-items:center;font-size:13px;color:#ccc;gap:6px}
+.chart-legend span i{display:inline-block;width:12px;height:12px;border-radius:3px;flex-shrink:0}
 </style></head><body>
 
 <h1>Monitoramento de 500 Ledgers — Dividido em 5 Grupos de 100</h1>
@@ -85,10 +88,10 @@ h4{color:#e94560;font-size:14px;margin:15px 0 5px 0}
     const fc0 = ["#e94560","#f2cc8f","#e07a5f","#6c5b7b","#3d5a80","#81b29a","#c8e6c9","#4caf50","#ff9800"];
 
     function sBar(id, titles, ds, cols, stacked) {
-      new Chart(document.getElementById(id), {type:'bar', data:{labels:L0, datasets:ds.map((d,i)=>({label:titles[i],data:d,backgroundColor:cols[i],borderRadius:1,categoryPercentage:0.5,barPercentage:0.5}))}, options:{responsive:true, plugins:{legend:{labels:{color:'#eee',fontSize:9}}}, scales:{x:{ticks:{color:'#aaa',autoSkip:true,maxTicksLimit:15}},y:{ticks:{color:'#aaa'},stacked:!!stacked}}}});
+      new Chart(document.getElementById(id), {type:'bar', data:{labels:L0, datasets:ds.map((d,i)=>({label:titles[i],data:d,backgroundColor:cols[i],borderRadius:1,categoryPercentage:0.5,barPercentage:0.5}))}, options:{responsive:true, plugins:{legend:{labels:{color:'#eee',fontSize:14}}}, scales:{x:{ticks:{color:'#aaa',autoSkip:true,maxTicksLimit:15}},y:{ticks:{color:'#aaa'},stacked:!!stacked}}}});
     }
     function sLine(id, ds, yO) {
-      new Chart(document.getElementById(id), {type:'line', data:{labels:L0, datasets:ds}, options:{responsive:true, plugins:{legend:{labels:{color:'#eee',fontSize:9}}}, scales:{x:{ticks:{color:'#aaa',autoSkip:true,maxTicksLimit:15}},y:{ticks:{color:'#aaa'},...yO||{}}}}});
+      new Chart(document.getElementById(id), {type:'line', data:{labels:L0, datasets:ds}, options:{responsive:true, plugins:{legend:{labels:{color:'#eee',fontSize:14}}}, scales:{x:{ticks:{color:'#aaa',autoSkip:true,maxTicksLimit:15}},y:{ticks:{color:'#aaa'},...yO||{}}}}});
     }
 
     sBar('c0_1', ['OK','FAIL'], [o0,f0], ['#4caf50','#e94560'], true);
@@ -154,10 +157,10 @@ h4{color:#e94560;font-size:14px;margin:15px 0 5px 0}
     const fc1 = ["#e94560","#f2cc8f","#e07a5f","#6c5b7b","#3d5a80","#81b29a","#c8e6c9","#4caf50","#ff9800"];
 
     function sBar(id, titles, ds, cols, stacked) {
-      new Chart(document.getElementById(id), {type:'bar', data:{labels:L1, datasets:ds.map((d,i)=>({label:titles[i],data:d,backgroundColor:cols[i],borderRadius:1,categoryPercentage:0.5,barPercentage:0.5}))}, options:{responsive:true, plugins:{legend:{labels:{color:'#eee',fontSize:9}}}, scales:{x:{ticks:{color:'#aaa',autoSkip:true,maxTicksLimit:15}},y:{ticks:{color:'#aaa'},stacked:!!stacked}}}});
+      new Chart(document.getElementById(id), {type:'bar', data:{labels:L1, datasets:ds.map((d,i)=>({label:titles[i],data:d,backgroundColor:cols[i],borderRadius:1,categoryPercentage:0.5,barPercentage:0.5}))}, options:{responsive:true, plugins:{legend:{labels:{color:'#eee',fontSize:14}}}, scales:{x:{ticks:{color:'#aaa',autoSkip:true,maxTicksLimit:15}},y:{ticks:{color:'#aaa'},stacked:!!stacked}}}});
     }
     function sLine(id, ds, yO) {
-      new Chart(document.getElementById(id), {type:'line', data:{labels:L1, datasets:ds}, options:{responsive:true, plugins:{legend:{labels:{color:'#eee',fontSize:9}}}, scales:{x:{ticks:{color:'#aaa',autoSkip:true,maxTicksLimit:15}},y:{ticks:{color:'#aaa'},...yO||{}}}}});
+      new Chart(document.getElementById(id), {type:'line', data:{labels:L1, datasets:ds}, options:{responsive:true, plugins:{legend:{labels:{color:'#eee',fontSize:14}}}, scales:{x:{ticks:{color:'#aaa',autoSkip:true,maxTicksLimit:15}},y:{ticks:{color:'#aaa'},...yO||{}}}}});
     }
 
     sBar('c1_1', ['OK','FAIL'], [o1,f1], ['#4caf50','#e94560'], true);
@@ -223,10 +226,10 @@ h4{color:#e94560;font-size:14px;margin:15px 0 5px 0}
     const fc2 = ["#e94560","#f2cc8f","#e07a5f","#6c5b7b","#3d5a80","#81b29a","#c8e6c9","#4caf50","#ff9800"];
 
     function sBar(id, titles, ds, cols, stacked) {
-      new Chart(document.getElementById(id), {type:'bar', data:{labels:L2, datasets:ds.map((d,i)=>({label:titles[i],data:d,backgroundColor:cols[i],borderRadius:1,categoryPercentage:0.5,barPercentage:0.5}))}, options:{responsive:true, plugins:{legend:{labels:{color:'#eee',fontSize:9}}}, scales:{x:{ticks:{color:'#aaa',autoSkip:true,maxTicksLimit:15}},y:{ticks:{color:'#aaa'},stacked:!!stacked}}}});
+      new Chart(document.getElementById(id), {type:'bar', data:{labels:L2, datasets:ds.map((d,i)=>({label:titles[i],data:d,backgroundColor:cols[i],borderRadius:1,categoryPercentage:0.5,barPercentage:0.5}))}, options:{responsive:true, plugins:{legend:{labels:{color:'#eee',fontSize:14}}}, scales:{x:{ticks:{color:'#aaa',autoSkip:true,maxTicksLimit:15}},y:{ticks:{color:'#aaa'},stacked:!!stacked}}}});
     }
     function sLine(id, ds, yO) {
-      new Chart(document.getElementById(id), {type:'line', data:{labels:L2, datasets:ds}, options:{responsive:true, plugins:{legend:{labels:{color:'#eee',fontSize:9}}}, scales:{x:{ticks:{color:'#aaa',autoSkip:true,maxTicksLimit:15}},y:{ticks:{color:'#aaa'},...yO||{}}}}});
+      new Chart(document.getElementById(id), {type:'line', data:{labels:L2, datasets:ds}, options:{responsive:true, plugins:{legend:{labels:{color:'#eee',fontSize:14}}}, scales:{x:{ticks:{color:'#aaa',autoSkip:true,maxTicksLimit:15}},y:{ticks:{color:'#aaa'},...yO||{}}}}});
     }
 
     sBar('c2_1', ['OK','FAIL'], [o2,f2], ['#4caf50','#e94560'], true);
@@ -292,10 +295,10 @@ h4{color:#e94560;font-size:14px;margin:15px 0 5px 0}
     const fc3 = ["#e94560","#f2cc8f","#e07a5f","#6c5b7b","#3d5a80","#81b29a","#c8e6c9","#4caf50","#ff9800"];
 
     function sBar(id, titles, ds, cols, stacked) {
-      new Chart(document.getElementById(id), {type:'bar', data:{labels:L3, datasets:ds.map((d,i)=>({label:titles[i],data:d,backgroundColor:cols[i],borderRadius:1,categoryPercentage:0.5,barPercentage:0.5}))}, options:{responsive:true, plugins:{legend:{labels:{color:'#eee',fontSize:9}}}, scales:{x:{ticks:{color:'#aaa',autoSkip:true,maxTicksLimit:15}},y:{ticks:{color:'#aaa'},stacked:!!stacked}}}});
+      new Chart(document.getElementById(id), {type:'bar', data:{labels:L3, datasets:ds.map((d,i)=>({label:titles[i],data:d,backgroundColor:cols[i],borderRadius:1,categoryPercentage:0.5,barPercentage:0.5}))}, options:{responsive:true, plugins:{legend:{labels:{color:'#eee',fontSize:14}}}, scales:{x:{ticks:{color:'#aaa',autoSkip:true,maxTicksLimit:15}},y:{ticks:{color:'#aaa'},stacked:!!stacked}}}});
     }
     function sLine(id, ds, yO) {
-      new Chart(document.getElementById(id), {type:'line', data:{labels:L3, datasets:ds}, options:{responsive:true, plugins:{legend:{labels:{color:'#eee',fontSize:9}}}, scales:{x:{ticks:{color:'#aaa',autoSkip:true,maxTicksLimit:15}},y:{ticks:{color:'#aaa'},...yO||{}}}}});
+      new Chart(document.getElementById(id), {type:'line', data:{labels:L3, datasets:ds}, options:{responsive:true, plugins:{legend:{labels:{color:'#eee',fontSize:14}}}, scales:{x:{ticks:{color:'#aaa',autoSkip:true,maxTicksLimit:15}},y:{ticks:{color:'#aaa'},...yO||{}}}}});
     }
 
     sBar('c3_1', ['OK','FAIL'], [o3,f3], ['#4caf50','#e94560'], true);
@@ -361,10 +364,10 @@ h4{color:#e94560;font-size:14px;margin:15px 0 5px 0}
     const fc4 = ["#e94560","#f2cc8f","#e07a5f","#6c5b7b","#3d5a80","#81b29a","#c8e6c9","#4caf50","#ff9800"];
 
     function sBar(id, titles, ds, cols, stacked) {
-      new Chart(document.getElementById(id), {type:'bar', data:{labels:L4, datasets:ds.map((d,i)=>({label:titles[i],data:d,backgroundColor:cols[i],borderRadius:1,categoryPercentage:0.5,barPercentage:0.5}))}, options:{responsive:true, plugins:{legend:{labels:{color:'#eee',fontSize:9}}}, scales:{x:{ticks:{color:'#aaa',autoSkip:true,maxTicksLimit:15}},y:{ticks:{color:'#aaa'},stacked:!!stacked}}}});
+      new Chart(document.getElementById(id), {type:'bar', data:{labels:L4, datasets:ds.map((d,i)=>({label:titles[i],data:d,backgroundColor:cols[i],borderRadius:1,categoryPercentage:0.5,barPercentage:0.5}))}, options:{responsive:true, plugins:{legend:{labels:{color:'#eee',fontSize:14}}}, scales:{x:{ticks:{color:'#aaa',autoSkip:true,maxTicksLimit:15}},y:{ticks:{color:'#aaa'},stacked:!!stacked}}}});
     }
     function sLine(id, ds, yO) {
-      new Chart(document.getElementById(id), {type:'line', data:{labels:L4, datasets:ds}, options:{responsive:true, plugins:{legend:{labels:{color:'#eee',fontSize:9}}}, scales:{x:{ticks:{color:'#aaa',autoSkip:true,maxTicksLimit:15}},y:{ticks:{color:'#aaa'},...yO||{}}}}});
+      new Chart(document.getElementById(id), {type:'line', data:{labels:L4, datasets:ds}, options:{responsive:true, plugins:{legend:{labels:{color:'#eee',fontSize:14}}}, scales:{x:{ticks:{color:'#aaa',autoSkip:true,maxTicksLimit:15}},y:{ticks:{color:'#aaa'},...yO||{}}}}});
     }
 
     sBar('c4_1', ['OK','FAIL'], [o4,f4], ['#4caf50','#e94560'], true);

@@ -15,6 +15,9 @@ h2{color:#e94560;font-size:20px;margin-top:40px} h3{color:#81b29a;font-size:16px
 .scroll-wrap{overflow-x:auto;overflow-y:hidden;width:100%}
 .scroll-wrap canvas{width:4000px!important;height:350px!important;display:block}
 .scroll-wrap.c80 canvas{height:200px!important}
+.chart-legend{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:center;padding:12px 20px;margin-top:8px;background:rgba(30,40,60,0.6);border-radius:6px;border:1px solid #16213e}
+.chart-legend span{display:flex;align-items:center;font-size:13px;color:#ccc;gap:6px}
+.chart-legend span i{display:inline-block;width:14px;height:14px;border-radius:3px;flex-shrink:0}
 .summary{background:linear-gradient(135deg,#16213e,#1a1a2e);padding:25px;border-radius:10px;margin:30px 0;border:1px solid #3d5a80;display:grid;grid-template-columns:auto auto;gap:10px 40px}
 .summary h2{grid-column:1/-1;margin:0 0 10px 0}
 .si{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid #1f2937}
@@ -62,8 +65,18 @@ const fal = [[2,1,2,1,2,1,2,2,2,1,2,1,0,1,0,0,2,1,1,1,2,1,1,1,0,1,1,1,1,1,0,1,0,
 const fnm = {"PAYMENT_NOTRUST":"Sem trust line","PAYMENT_NODESTINATION":"Destino inexistente","PAYMENT_UNDERFUNDED":"Saldo insuficiente","SOROBAN_TRAPPED":"Erro em contrato Soroban","DECODE_ERR":"Erro de decodificação","OP_TYPE_REVOKESPONSORSHIP":"Revogar patrocínio","OP_TYPE_MANAGESELLOFFER":"Gerenciar oferta","OP_TOOMANYSUBENTRIES":"Muitas subentradas","OP_TYPE_CHANGETRUST":"Alterar trust line"};
 const fc = ['#e94560','#f2cc8f','#e07a5f','#6c5b7b','#3d5a80','#81b29a','#c8e6c9','#4caf50','#ff9800'];
 
-function sb(id, ti, ds, co, st) { new Chart(document.getElementById(id),{type:'bar',data:{labels:L,datasets:ds.map((d,i)=>({label:ti[i],data:d,backgroundColor:co[i],borderRadius:1,categoryPercentage:0.8,barPercentage:0.9}))},options:{responsive:false,plugins:{legend:{position:'bottom',labels:{color:'#eee',fontSize:10}}},scales:{x:{ticks:{color:'#aaa',autoSkip:false,maxRotation:90}},y:{ticks:{color:'#aaa'},stacked:!!st}}}}); }
-function sl(id, ds, yo) { new Chart(document.getElementById(id),{type:'line',data:{labels:L,datasets:ds},options:{responsive:false,plugins:{legend:{position:'bottom',labels:{color:'#eee',fontSize:10}}},scales:{x:{ticks:{color:'#aaa',autoSkip:false,maxRotation:90}},y:{ticks:{color:'#aaa'},...yo||{}}}}}); }
+function mkLegend(canvasId, ds) {
+  const wrap = document.getElementById(canvasId).closest('.chart-container');
+  const box = document.createElement('div');
+  box.className = 'chart-legend';
+  ds.forEach(d => {
+    const color = d.borderColor || d.backgroundColor;
+    box.innerHTML += '<span><i style="background:'+color+'"></i>'+d.label+'</span>';
+  });
+  wrap.appendChild(box);
+}
+function sb(id, ti, ds, co, st) { const ch = new Chart(document.getElementById(id),{type:'bar',data:{labels:L,datasets:ds.map((d,i)=>({label:ti[i],data:d,backgroundColor:co[i],borderRadius:1,categoryPercentage:0.8,barPercentage:0.9}))},options:{responsive:false,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#aaa',autoSkip:false,maxRotation:90}},y:{ticks:{color:'#aaa'},stacked:!!st}}}}); mkLegend(id, ch.data.datasets); }
+function sl(id, ds, yo) { var yOpts = Object.assign({ticks:{color:'#aaa'}}, yo||{}); var ch = new Chart(document.getElementById(id),{type:'line',data:{labels:L,datasets:ds},options:{responsive:false,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#aaa',autoSkip:false,maxRotation:90}},y:yOpts}}}); mkLegend(id, ch.data.datasets); }
 
 sb('c1',['OK','FAIL'],[o,f],['#4caf50','#e94560'],true);
 sb('c2',['Propostas (TxSet)','Executadas'],[t,p],['#3d5a80','#81b29a'],false);
