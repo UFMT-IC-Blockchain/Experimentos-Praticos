@@ -1,0 +1,592 @@
+﻿=== Stellar Horizon - Inicializando ===
+docker : 2026-07-22 01:01:06.332 UTC [41] LOG:  starting PostgreSQL 16.14 (Ubuntu 16.14-1.pgdg24.04+1) on 
+x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0, 64-bit
+No linha:1 caractere:1
++ docker logs stellar-horizon 2>&1 | Out-File "C:\Users\helio\OneDrive\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (2026-07-22 01:0... 13.3.0, 64-bit:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+2026-07-22 01:01:06.332 UTC [41] LOG:  listening on IPv6 address "::1", port 5432
+2026-07-22 01:01:06.333 UTC [41] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2026-07-22 01:01:06.340 UTC [41] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2026-07-22 01:01:06.352 UTC [46] LOG:  database system was shut down at 2026-07-14 23:05:03 UTC
+2026-07-22 01:01:06.360 UTC [41] LOG:  database system is ready to accept connections
+2026-07-22 01:01:09.709 UTC [88] stellar@horizon LOG:  could not receive data from client: Connection reset by peer
+2026-07-22 01:01:09.709 UTC [87] stellar@horizon LOG:  could not receive data from client: Connection reset by peer
+Versao Core: v27.1.0
+Versao Horizon: devel
+Network: Test SDF Network ; September 2015
+Copiando stellar-captive-core.cfg do staging...
+Copiando horizon.env do staging...
+PostgreSQL ja inicializado.
+Iniciando PostgreSQL...
+Aguardando PostgreSQL... (1/30)
+PostgreSQL pronto (PID 38).
+Criando banco horizon e usuario...
+CREATE ROLE
+GRANT
+Banco horizon pronto.
+Configurando horizon.env...
+Executando migracoes do Horizon...
+2026/07/22 01:01:09 DEPRECATED - The usage of the flag --enable-captive-core-ingestion has been deprecated. Horizon 
+now uses Captive-Core ingestion by default and this flag will soon be removed in the future.
+2026/07/22 01:01:09 Successfully applied 72 migrations.
+Iniciando nginx na porta 8000...
+nginx rodando (PID 90).
+
+=== Iniciando stellar-horizon ===
+API publica:  http://0.0.0.0:8000 (nginx -> 8001)
+PostgreSQL:   localhost:5432
+Captive Core: P2P=11725 HTTP=11726
+
+Iniciando stellar-horizon serve...
+=== Stellar Horizon - Inicializando ===
+Versao Core: v27.1.0
+Versao Horizon: devel
+Network: Test SDF Network ; September 2015
+PostgreSQL ja inicializado.
+Iniciando PostgreSQL...
+Aguardando PostgreSQL... (1/30)
+Aguardando PostgreSQL... (2/30)
+PostgreSQL pronto (PID 34).
+Configurando horizon.env...
+Executando migracoes do Horizon...
+2026/07/22 01:01:14 No migrations applied.
+Iniciando nginx na porta 8000...
+nginx rodando (PID 77).
+
+=== Iniciando stellar-horizon ===
+API publica:  http://0.0.0.0:8000 (nginx -> 8001)
+PostgreSQL:   localhost:5432
+Captive Core: P2P=11725 HTTP=11726
+
+Iniciando stellar-horizon serve...
+=== Stellar Horizon - Inicializando ===
+Versao Core: v27.1.0
+Versao Horizon: devel
+2026/07/22 01:01:09 Checking DB migrations...
+invalid config: network-passphrase parameter not allowed with the network parameter
+2026-07-22 01:01:10.319 UTC [37] LOG:  starting PostgreSQL 16.14 (Ubuntu 16.14-1.pgdg24.04+1) on x86_64-pc-linux-gnu, 
+compiled by gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0, 64-bit
+2026-07-22 01:01:10.319 UTC [37] LOG:  listening on IPv6 address "::1", port 5432
+2026-07-22 01:01:10.319 UTC [37] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2026-07-22 01:01:10.327 UTC [37] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2026-07-22 01:01:10.338 UTC [42] LOG:  database system was interrupted; last known up at 2026-07-22 01:01:06 UTC
+2026-07-22 01:01:12.356 UTC [45] postgres@postgres FATAL:  the database system is starting up
+2026-07-22 01:01:12.590 UTC [42] LOG:  database system was not properly shut down; automatic recovery in progress
+2026-07-22 01:01:12.597 UTC [42] LOG:  redo starts at 0/14EF3E0
+2026-07-22 01:01:12.642 UTC [42] LOG:  invalid record length at 0/1A653E0: expected at least 24, got 0
+2026-07-22 01:01:12.642 UTC [42] LOG:  redo done at 0/1A65248 system usage: CPU: user: 0.01 s, system: 0.01 s, 
+elapsed: 0.04 s
+2026-07-22 01:01:12.658 UTC [40] LOG:  checkpoint starting: end-of-recovery immediate wait
+2026-07-22 01:01:13.761 UTC [40] LOG:  checkpoint complete: wrote 1142 buffers (7.0%); 0 WAL file(s) added, 0 removed, 
+0 recycled; write=0.018 s, sync=1.073 s, total=1.108 s; sync files=483, longest=0.008 s, average=0.003 s; 
+distance=5592 kB, estimate=5592 kB; lsn=0/1A653E0, redo lsn=0/1A653E0
+2026-07-22 01:01:13.771 UTC [37] LOG:  database system is ready to accept connections
+2026-07-22 01:01:14.491 UTC [73] stellar@horizon LOG:  could not receive data from client: Connection reset by peer
+2026-07-22 01:01:14.491 UTC [72] stellar@horizon LOG:  could not receive data from client: Connection reset by peer
+2026/07/22 01:01:14 DEPRECATED - The usage of the flag --enable-captive-core-ingestion has been deprecated. Horizon 
+now uses Captive-Core ingestion by default and this flag will soon be removed in the future.
+2026/07/22 01:01:14 Checking DB migrations...
+invalid config: network-passphrase parameter not allowed with the network parameter
+Network: Test SDF Network ; September 2015
+PostgreSQL ja inicializado.
+Iniciando PostgreSQL...
+Aguardando PostgreSQL... (1/30)
+Aguardando PostgreSQL... (2/30)
+PostgreSQL pronto (PID 34).
+Configurando horizon.env...
+Executando migracoes do Horizon...
+2026/07/22 01:01:19 No migrations applied.
+Iniciando nginx na porta 8000...
+nginx rodando (PID 75).
+
+=== Iniciando stellar-horizon ===
+API publica:  http://0.0.0.0:8000 (nginx -> 8001)
+PostgreSQL:   localhost:5432
+Captive Core: P2P=11725 HTTP=11726
+
+Iniciando stellar-horizon serve...
+2026-07-22 01:01:15.086 UTC [37] LOG:  starting PostgreSQL 16.14 (Ubuntu 16.14-1.pgdg24.04+1) on x86_64-pc-linux-gnu, 
+compiled by gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0, 64-bit
+=== Stellar Horizon - Inicializando ===
+Versao Core: v27.1.0
+Versao Horizon: devel
+Network: Test SDF Network ; September 2015
+PostgreSQL ja inicializado.
+Iniciando PostgreSQL...
+Aguardando PostgreSQL... (1/30)
+Aguardando PostgreSQL... (2/30)
+Aguardando PostgreSQL... (3/30)
+Aguardando PostgreSQL... (4/30)
+Aguardando PostgreSQL... (5/30)
+Aguardando PostgreSQL... (6/30)
+Aguardando PostgreSQL... (7/30)
+Aguardando PostgreSQL... (8/30)
+Aguardando PostgreSQL... (9/30)
+Aguardando PostgreSQL... (10/30)
+Aguardando PostgreSQL... (11/30)
+Aguardando PostgreSQL... (12/30)
+Aguardando PostgreSQL... (13/30)
+Aguardando PostgreSQL... (14/30)
+Aguardando PostgreSQL... (15/30)
+Aguardando PostgreSQL... (16/30)
+Aguardando PostgreSQL... (17/30)
+Aguardando PostgreSQL... (18/30)
+Aguardando PostgreSQL... (19/30)
+Aguardando PostgreSQL... (20/30)
+Aguardando PostgreSQL... (21/30)
+Aguardando PostgreSQL... (22/30)
+2026-07-22 01:01:15.086 UTC [37] LOG:  listening on IPv6 address "::1", port 5432
+2026-07-22 01:01:15.086 UTC [37] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2026-07-22 01:01:15.094 UTC [37] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+Aguardando PostgreSQL... (23/30)
+2026-07-22 01:01:15.106 UTC [42] LOG:  database system was interrupted; last known up at 2026-07-22 01:01:13 UTC
+Aguardando PostgreSQL... (24/30)
+Aguardando PostgreSQL... (25/30)
+Aguardando PostgreSQL... (26/30)
+Aguardando PostgreSQL... (27/30)
+Aguardando PostgreSQL... (28/30)
+Aguardando PostgreSQL... (29/30)
+Aguardando PostgreSQL... (30/30)
+Criando banco horizon e usuario...
+Banco horizon pronto.
+Configurando horizon.env...
+Executando migracoes do Horizon...
+dial tcp [::1]:5432: connect: connection refused
+Iniciando nginx na porta 8000...
+nginx rodando (PID 222).
+
+=== Iniciando stellar-horizon ===
+API publica:  http://0.0.0.0:8000 (nginx -> 8001)
+PostgreSQL:   localhost:5432
+Captive Core: P2P=11725 HTTP=11726
+
+Iniciando stellar-horizon serve...
+=== Stellar Horizon - Inicializando ===
+Versao Core: v27.1.0
+Versao Horizon: devel
+Network: Test SDF Network ; September 2015
+PostgreSQL ja inicializado.
+Iniciando PostgreSQL...
+Aguardando PostgreSQL... (1/30)
+Aguardando PostgreSQL... (2/30)
+PostgreSQL pronto (PID 35).
+Configurando horizon.env...
+Executando migracoes do Horizon...
+2026/07/22 01:02:24 No migrations applied.
+Iniciando nginx na porta 8000...
+nginx rodando (PID 77).
+
+=== Iniciando stellar-horizon ===
+API publica:  http://0.0.0.0:8000 (nginx -> 8001)
+PostgreSQL:   localhost:5432
+Captive Core: P2P=11725 HTTP=11726
+
+Iniciando stellar-horizon serve...
+=== Stellar Horizon - Inicializando ===
+Versao Core: v27.1.0
+Versao Horizon: devel
+Network: Test SDF Network ; September 2015
+PostgreSQL ja inicializado.
+Iniciando PostgreSQL...
+Aguardando PostgreSQL... (1/30)
+Aguardando PostgreSQL... (2/30)
+PostgreSQL pronto (PID 36).
+Configurando horizon.env...
+Executando migracoes do Horizon...
+2026-07-22 01:01:17.121 UTC [45] postgres@postgres FATAL:  the database system is starting up
+2026-07-22 01:01:17.203 UTC [42] LOG:  database system was not properly shut down; automatic recovery in progress
+2026-07-22 01:01:17.210 UTC [42] LOG:  redo starts at 0/1A65458
+2026-07-22 01:01:17.210 UTC [42] LOG:  invalid magic number 0000 in WAL segment 000000010000000000000001, LSN 
+0/1A6A000, offset 10919936
+2026-07-22 01:01:17.210 UTC [42] LOG:  redo done at 0/1A673C0 system usage: CPU: user: 0.00 s, system: 0.00 s, 
+elapsed: 0.00 s
+2026-07-22 01:01:17.224 UTC [40] LOG:  checkpoint starting: end-of-recovery immediate wait
+2026-07-22 01:01:17.261 UTC [40] LOG:  checkpoint complete: wrote 7 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 
+recycled; write=0.008 s, sync=0.013 s, total=0.042 s; sync files=6, longest=0.004 s, average=0.003 s; distance=19 kB, 
+estimate=19 kB; lsn=0/1A6A048, redo lsn=0/1A6A048
+2026-07-22 01:01:17.269 UTC [37] LOG:  database system is ready to accept connections
+2026-07-22 01:01:19.246 UTC [73] stellar@horizon LOG:  could not receive data from client: Connection reset by peer
+2026-07-22 01:01:19.246 UTC [72] stellar@horizon LOG:  could not receive data from client: Connection reset by peer
+2026/07/22 01:01:19 DEPRECATED - The usage of the flag --enable-captive-core-ingestion has been deprecated. Horizon 
+now uses Captive-Core ingestion by default and this flag will soon be removed in the future.
+2026/07/22 01:01:19 Checking DB migrations...
+invalid config: network-passphrase parameter not allowed with the network parameter
+2026-07-22 01:01:19.983 UTC [36] FATAL:  lock file "postmaster.pid" already exists
+2026-07-22 01:01:19.983 UTC [36] HINT:  Is another postmaster (PID 37) running in data directory 
+"/var/lib/postgresql/16/main"?
+2026/07/22 01:02:20 DEPRECATED - The usage of the flag --enable-captive-core-ingestion has been deprecated. Horizon 
+now uses Captive-Core ingestion by default and this flag will soon be removed in the future.
+2026/07/22 01:02:20 Checking DB migrations...
+2026/07/22 01:02:20 dial tcp [::1]:5432: connect: connection refused
+2026-07-22 01:02:20.630 UTC [38] LOG:  starting PostgreSQL 16.14 (Ubuntu 16.14-1.pgdg24.04+1) on x86_64-pc-linux-gnu, 
+compiled by gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0, 64-bit
+2026-07-22 01:02:20.631 UTC [38] LOG:  listening on IPv6 address "::1", port 5432
+2026-07-22 01:02:20.631 UTC [38] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2026-07-22 01:02:20.638 UTC [38] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2026-07-22 01:02:20.650 UTC [43] LOG:  database system was interrupted; last known up at 2026-07-22 01:01:17 UTC
+2026-07-22 01:02:22.665 UTC [46] postgres@postgres FATAL:  the database system is starting up
+2026-07-22 01:02:22.747 UTC [43] LOG:  database system was not properly shut down; automatic recovery in progress
+2026-07-22 01:02:22.755 UTC [43] LOG:  redo starts at 0/1A6A0C0
+2026-07-22 01:02:22.755 UTC [43] LOG:  invalid magic number 0000 in WAL segment 000000010000000000000001, LSN 
+0/1A6C000, offset 10928128
+2026-07-22 01:02:22.755 UTC [43] LOG:  redo done at 0/1A6A0C0 system usage: CPU: user: 0.00 s, system: 0.00 s, 
+elapsed: 0.00 s
+2026-07-22 01:02:22.769 UTC [41] LOG:  checkpoint starting: end-of-recovery immediate wait
+2026-07-22 01:02:22.799 UTC [41] LOG:  checkpoint complete: wrote 5 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 
+recycled; write=0.008 s, sync=0.010 s, total=0.035 s; sync files=4, longest=0.005 s, average=0.003 s; distance=8 kB, 
+estimate=8 kB; lsn=0/1A6C048, redo lsn=0/1A6C048
+2026-07-22 01:02:22.807 UTC [38] LOG:  database system is ready to accept connections
+2026-07-22 01:02:24.796 UTC [75] stellar@horizon LOG:  could not receive data from client: Connection reset by peer
+2026-07-22 01:02:24.796 UTC [74] stellar@horizon LOG:  could not receive data from client: Connection reset by peer
+2026/07/22 01:02:24 DEPRECATED - The usage of the flag --enable-captive-core-ingestion has been deprecated. Horizon 
+now uses Captive-Core ingestion by default and this flag will soon be removed in the future.
+2026/07/22 01:02:24 Checking DB migrations...
+invalid config: network-passphrase parameter not allowed with the network parameter
+2026-07-22 01:02:25.371 UTC [39] LOG:  starting PostgreSQL 16.14 (Ubuntu 16.14-1.pgdg24.04+1) on x86_64-pc-linux-gnu, 
+compiled by gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0, 64-bit
+2026-07-22 01:02:25.371 UTC [39] LOG:  listening on IPv6 address "::1", port 5432
+2026-07-22 01:02:25.371 UTC [39] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2026-07-22 01:02:25.378 UTC [39] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2026-07-22 01:02:25.392 UTC [44] LOG:  database system was interrupted; last known up at 2026-07-22 01:02:22 UTC
+2026-07-22 01:02:27.404 UTC [47] postgres@postgres FATAL:  the database system is starting up
+2026-07-22 01:02:27.451 UTC [44] LOG:  database system was not properly shut down; automatic recovery in progress
+2026-07-22 01:02:27.458 UTC [44] LOG:  redo starts at 0/1A6C0C0
+2026-07-22 01:02:27.459 UTC [44] LOG:  invalid record length at 0/1A6C178: expected at least 24, got 0
+2026-07-22 01:02:27.459 UTC [44] LOG:  redo done at 0/1A6C150 system usage: CPU: user: 0.00 s, system: 0.00 s, 
+elapsed: 0.00 s
+2026-07-22 01:02:27.470 UTC [42] LOG:  checkpoint starting: end-of-recovery immediate wait
+2026-07-22 01:02:27.500 UTC [42] LOG:  checkpoint complete: wrote 4 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 
+recycled; write=0.007 s, sync=0.009 s, total=0.034 s; sync files=3, longest=0.005 s, average=0.003 s; distance=0 kB, 
+estimate=0 kB; lsn=0/1A6C178, redo lsn=0/1A6C178
+2026-07-22 01:02:27.507 UTC [39] LOG:  database system is ready to accept connections
+2026-07-22 01:02:29.542 UTC [75] stellar@horizon LOG:  could not receive data from client: Connection reset by peer
+2026-07-22 01:02:29.542 UTC [74] stellar@horizon LOG:  could not receive data from client: Connection reset by peer
+2026/07/22 01:02:29 DEPRECATED - The usage of the flag --enable-captive-core-ingestion has been deprecated. Horizon 
+now uses Captive-Core ingestion by default and this flag will soon be removed in the future.
+2026/07/22 01:02:29 Checking DB migrations...
+invalid config: network-passphrase parameter not allowed with the network parameter
+2026-07-22 01:02:30.336 UTC [36] LOG:  starting PostgreSQL 16.14 (Ubuntu 16.14-1.pgdg24.04+1) on x86_64-pc-linux-gnu, 
+compiled by gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0, 64-bit
+2026-07-22 01:02:30.337 UTC [36] LOG:  listening on IPv6 address "::1", port 5432
+2026-07-22 01:02:30.337 UTC [36] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2026-07-22 01:02:30.344 UTC [36] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2026-07-22 01:02:30.357 UTC [41] LOG:  database system was interrupted; last known up at 2026-07-22 01:02:27 UTC
+2026-07-22 01:02:32.370 UTC [44] postgres@postgres FATAL:  the database system is starting up
+2026-07-22 01:02:33.089 UTC [41] LOG:  database system was not properly shut down; automatic recovery in progress
+2026-07-22 01:02:33.096 UTC [41] LOG:  invalid record length at 0/1A6C1F0: expected at least 24, got 0
+2026-07-22 01:02:33.096 UTC [41] LOG:  redo is not required
+2026-07-22 01:02:33.108 UTC [39] LOG:  checkpoint starting: end-of-recovery immediate wait
+2026-07-22 01:02:33.135 UTC [39] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 
+recycled; write=0.008 s, sync=0.004 s, total=0.030 s; sync files=2, longest=0.002 s, average=0.002 s; distance=0 kB, 
+estimate=0 kB; lsn=0/1A6C1F0, redo lsn=0/1A6C1F0
+2026-07-22 01:02:33.142 UTC [36] LOG:  database system is ready to accept connections
+2026-07-22 01:02:34.497 UTC [72] stellar@horizon LOG:  could not receive data from client: Connection reset by peer
+2026-07-22 01:02:34.497 UTC [71] stellar@horizon LOG:  could not receive data from client: Connection reset by peer
+2026/07/22 01:02:34 DEPRECATED - The usage of the flag --enable-captive-core-ingestion has been deprecated. Horizon 
+now uses Captive-Core ingestion by default and this flag will soon be removed in the future.
+2026/07/22 01:02:34 Checking DB migrations...
+invalid config: network-passphrase parameter not allowed with the network parameter
+2026-07-22 01:02:35.653 UTC [37] LOG:  starting PostgreSQL 16.14 (Ubuntu 16.14-1.pgdg24.04+1) on x86_64-pc-linux-gnu, 
+compiled by gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0, 64-bit
+2026-07-22 01:02:35.653 UTC [37] LOG:  listening on IPv6 address "::1", port 5432
+2026-07-22 01:02:35.653 UTC [37] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2026-07-22 01:02:35.661 UTC [37] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2026-07-22 01:02:35.673 UTC [42] LOG:  database system was interrupted; last known up at 2026-07-22 01:02:33 UTC
+2026-07-22 01:02:37.702 UTC [45] postgres@postgres FATAL:  the database system is starting up
+2026-07-22 01:02:37.746 UTC [42] LOG:  database system was not properly shut down; automatic recovery in progress
+2026-07-22 01:02:37.753 UTC [42] LOG:  redo starts at 0/1A6C268
+2026-07-22 01:02:37.753 UTC [42] LOG:  invalid record length at 0/1A6C320: expected at least 24, got 0
+2026-07-22 01:02:37.753 UTC [42] LOG:  redo done at 0/1A6C2F8 system usage: CPU: user: 0.00 s, system: 0.00 s, 
+elapsed: 0.00 s
+2026-07-22 01:02:37.766 UTC [40] LOG:  checkpoint starting: end-of-recovery immediate wait
+2026-07-22 01:02:37.799 UTC [40] LOG:  checkpoint complete: wrote 4 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 
+recycled; write=0.008 s, sync=0.010 s, total=0.037 s; sync files=3, longest=0.005 s, average=0.004 s; distance=0 kB, 
+estimate=0 kB; lsn=0/1A6C320, redo lsn=0/1A6C320
+2026-07-22 01:02:37.806 UTC [37] LOG:  database system is ready to accept connections
+2026-07-22 01:02:39.829 UTC [73] stellar@horizon LOG:  could not receive data from client: Connection reset by peer
+2026-07-22 01:02:39.829 UTC [72] stellar@horizon LOG:  could not receive data from client: Connection reset by peer
+2026/07/22 01:02:39 DEPRECATED - The usage of the flag --enable-captive-core-ingestion has been deprecated. Horizon 
+now uses Captive-Core ingestion by default and this flag will soon be removed in the future.
+2026/07/22 01:02:39 Checking DB migrations...
+invalid config: network-passphrase parameter not allowed with the network parameter
+2026-07-22 01:02:41.762 UTC [37] LOG:  starting PostgreSQL 16.14 (Ubuntu 16.14-1.pgdg24.04+1) on x86_64-pc-linux-gnu, 
+compiled by gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0, 64-bit
+2026-07-22 01:02:41.763 UTC [37] LOG:  listening on IPv6 address "::1", port 5432
+2026-07-22 01:02:41.763 UTC [37] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2026-07-22 01:02:41.770 UTC [37] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2026-07-22 01:02:41.783 UTC [42] LOG:  database system was interrupted; last known up at 2026-07-22 01:02:37 UTC
+2026-07-22 01:02:43.795 UTC [45] postgres@postgres FATAL:  the database system is starting up
+2026-07-22 01:02:44.357 UTC [42] LOG:  database system was not properly shut down; automatic recovery in progress
+2026-07-22 01:02:44.364 UTC [42] LOG:  invalid record length at 0/1A6C398: expected at least 24, got 0
+2026-07-22 01:02:44.364 UTC [42] LOG:  redo is not required
+2026-07-22 01:02:44.378 UTC [40] LOG:  checkpoint starting: end-of-recovery immediate wait
+2026-07-22 01:02:44.403 UTC [40] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 
+recycled; write=0.008 s, sync=0.004 s, total=0.029 s; sync files=2, longest=0.003 s, average=0.002 s; distance=0 kB, 
+estimate=0 kB; lsn=0/1A6C398, redo lsn=0/1A6C398
+2026-07-22 01:02:44.410 UTC [37] LOG:  database system is ready to accept connections
+2026-07-22 01:02:45.923 UTC [73] stellar@horizon LOG:  could not receive data from client: Connection reset by peer
+2026-07-22 01:02:45.923 UTC [72] stellar@horizon LOG:  could not receive data from client: Connection reset by peer
+2026/07/22 01:02:45 DEPRECATED - The usage of the flag --enable-captive-core-ingestion has been deprecated. Horizon 
+now uses Captive-Core ingestion by default and this flag will soon be removed in the future.
+2026/07/22 01:02:45 Checking DB migrations...
+invalid config: network-passphrase parameter not allowed with the network parameter
+2026-07-22 01:02:49.479 UTC [37] LOG:  starting PostgreSQL 16.14 (Ubuntu 16.14-1.pgdg24.04+1) on x86_64-pc-linux-gnu, 
+compiled by gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0, 64-bit
+2026-07-22 01:02:49.479 UTC [37] LOG:  listening on IPv6 address "::1", port 5432
+2026-07-22 01:02:49.479 UTC [37] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2026-07-22 01:02:49.487 UTC [37] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2026-07-22 01:02:49.499 UTC [42] LOG:  database system was interrupted; last known up at 2026-07-22 01:02:44 UTC
+2026-07-22 01:02:51.513 UTC [45] postgres@postgres FATAL:  the database system is starting up
+2026-07-22 01:02:51.682 UTC [42] LOG:  database system was not properly shut down; automatic recovery in progress
+2026-07-22 01:02:51.689 UTC [42] LOG:  invalid record length at 0/1A6C410: expected at least 24, got 0
+2026-07-22 01:02:51.689 UTC [42] LOG:  redo is not required
+2026-07-22 01:02:51.713 UTC [40] LOG:  checkpoint starting: end-of-recovery immediate wait
+2026-07-22 01:02:51.753 UTC [40] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 
+recycled; write=0.015 s, sync=0.004 s, total=0.045 s; sync files=2, longest=0.002 s, average=0.002 s; distance=0 kB, 
+estimate=0 kB; lsn=0/1A6C410, redo lsn=0/1A6C410
+2026-07-22 01:02:51.763 UTC [37] LOG:  database system is ready to accept connections
+2026-07-22 01:02:53.642 UTC [73] stellar@horizon LOG:  could not receive data from client: Connection reset by peer
+2026-07-22 01:02:53.642 UTC [72] stellar@horizon LOG:  could not receive data from client: Connection reset by peer
+2026/07/22 01:02:53 DEPRECATED - The usage of the flag --enable-captive-core-ingestion has been deprecated. Horizon 
+now uses Captive-Core ingestion by default and this flag will soon be removed in the future.
+2026/07/22 01:02:53 Checking DB migrations...
+invalid config: network-passphrase parameter not allowed with the network parameter
+2026-07-22 01:03:00.113 UTC [37] LOG:  starting PostgreSQL 16.14 (Ubuntu 16.14-1.pgdg24.04+1) on x86_64-pc-linux-gnu, 
+compiled by gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0, 64-bit
+2026-07-22 01:03:00.113 UTC [37] LOG:  listening on IPv6 address "::1", port 5432
+2026-07-22 01:03:00.113 UTC [37] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2026-07-22 01:03:00.121 UTC [37] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2026-07-22 01:03:00.134 UTC [42] LOG:  database system was interrupted; last known up at 2026-07-22 01:02:51 UTC
+2026-07-22 01:03:02.152 UTC [45] postgres@postgres FATAL:  the database system is starting up
+2026-07-22 01:03:02.284 UTC [42] LOG:  database system was not properly shut down; automatic recovery in progress
+2026-07-22 01:03:02.293 UTC [42] LOG:  invalid record length at 0/1A6C488: expected at least 24, got 0
+2026-07-22 01:03:02.293 UTC [42] LOG:  redo is not required
+2026-07-22 01:03:02.310 UTC [40] LOG:  checkpoint starting: end-of-recovery immediate wait
+2026-07-22 01:03:02.339 UTC [40] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 
+recycled; write=0.008 s, sync=0.004 s, total=0.034 s; sync files=2, longest=0.002 s, average=0.002 s; distance=0 kB, 
+estimate=0 kB; lsn=0/1A6C488, redo lsn=0/1A6C488
+2026-07-22 01:03:02.346 UTC [37] LOG:  database system is ready to accept connections
+2026-07-22 01:03:04.289 UTC [73] stellar@horizon LOG:  could not receive data from client: Connection reset by peer
+2026-07-22 01:03:04.289 UTC [72] stellar@horizon LOG:  could not receive data from client: Connection reset by peer
+2026/07/22 01:03:04 DEPRECATED - The usage of the flag --enable-captive-core-ingestion has been deprecated. Horizon 
+now uses Captive-Core ingestion by default and this flag will soon be removed in the future.
+2026/07/22 01:03:04 Checking DB migrations...
+invalid config: network-passphrase parameter not allowed with the network parameter
+2026-07-22 01:03:17.447 UTC [38] LOG:  starting PostgreSQL 16.14 (Ubuntu 16.14-1.pgdg24.04+1) on x86_64-pc-linux-gnu, 
+compiled by gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0, 64-bit
+2026-07-22 01:03:17.448 UTC [38] LOG:  listening on IPv6 address "::1", port 5432
+2026-07-22 01:03:17.448 UTC [38] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2026-07-22 01:03:17.456 UTC [38] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2026-07-22 01:03:17.468 UTC [43] LOG:  database system was interrupted; last known up at 2026-07-22 01:03:02 UTC
+2026-07-22 01:03:19.493 UTC [46] postgres@postgres FATAL:  the database system is starting up
+2026-07-22 01:03:19.555 UTC [43] LOG:  database system was not properly shut down; automatic recovery in progress
+2026-07-22 01:03:19.563 UTC [43] LOG:  invalid record length at 0/1A6C500: expected at least 24, got 0
+2026-07-22 01:03:19.563 UTC [43] LOG:  redo is not required
+2026-07-22 01:03:19.586 UTC [41] LOG:  checkpoint starting: end-of-recovery immediate wait
+2026-07-22 01:03:19.617 UTC [41] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 
+recycled; write=0.008 s, sync=0.006 s, total=0.035 s; sync files=2, longest=0.004 s, average=0.003 s; distance=0 kB, 
+estimate=0 kB; lsn=0/1A6C500, redo lsn=0/1A6C500
+2026-07-22 01:03:19.624 UTC [38] LOG:  database system is ready to accept connections
+2026-07-22 01:03:21.640 UTC [73] stellar@horizon LOG:  could not receive data from client: Connection reset by peer
+2026-07-22 01:03:21.640 UTC [72] stellar@horizon LOG:  could not receive data from client: Connection reset by peer
+2026/07/22 01:02:29 No migrations applied.
+Iniciando nginx na porta 8000...
+nginx rodando (PID 77).
+
+=== Iniciando stellar-horizon ===
+API publica:  http://0.0.0.0:8000 (nginx -> 8001)
+PostgreSQL:   localhost:5432
+Captive Core: P2P=11725 HTTP=11726
+
+Iniciando stellar-horizon serve...
+=== Stellar Horizon - Inicializando ===
+Versao Core: v27.1.0
+Versao Horizon: devel
+Network: Test SDF Network ; September 2015
+PostgreSQL ja inicializado.
+Iniciando PostgreSQL...
+Aguardando PostgreSQL... (1/30)
+Aguardando PostgreSQL... (2/30)
+PostgreSQL pronto (PID 33).
+Configurando horizon.env...
+Executando migracoes do Horizon...
+2026/07/22 01:02:34 No migrations applied.
+Iniciando nginx na porta 8000...
+nginx rodando (PID 74).
+
+=== Iniciando stellar-horizon ===
+API publica:  http://0.0.0.0:8000 (nginx -> 8001)
+PostgreSQL:   localhost:5432
+Captive Core: P2P=11725 HTTP=11726
+
+Iniciando stellar-horizon serve...
+=== Stellar Horizon - Inicializando ===
+Versao Core: v27.1.0
+Versao Horizon: devel
+Network: Test SDF Network ; September 2015
+PostgreSQL ja inicializado.
+Iniciando PostgreSQL...
+Aguardando PostgreSQL... (1/30)
+Aguardando PostgreSQL... (2/30)
+PostgreSQL pronto (PID 34).
+Configurando horizon.env...
+Executando migracoes do Horizon...
+2026/07/22 01:02:39 No migrations applied.
+Iniciando nginx na porta 8000...
+nginx rodando (PID 75).
+
+=== Iniciando stellar-horizon ===
+API publica:  http://0.0.0.0:8000 (nginx -> 8001)
+PostgreSQL:   localhost:5432
+Captive Core: P2P=11725 HTTP=11726
+
+Iniciando stellar-horizon serve...
+=== Stellar Horizon - Inicializando ===
+Versao Core: v27.1.0
+Versao Horizon: devel
+Network: Test SDF Network ; September 2015
+PostgreSQL ja inicializado.
+Iniciando PostgreSQL...
+Aguardando PostgreSQL... (1/30)
+Aguardando PostgreSQL... (2/30)
+PostgreSQL pronto (PID 34).
+Configurando horizon.env...
+Executando migracoes do Horizon...
+2026/07/22 01:02:45 No migrations applied.
+Iniciando nginx na porta 8000...
+nginx rodando (PID 75).
+
+=== Iniciando stellar-horizon ===
+API publica:  http://0.0.0.0:8000 (nginx -> 8001)
+PostgreSQL:   localhost:5432
+Captive Core: P2P=11725 HTTP=11726
+
+Iniciando stellar-horizon serve...
+=== Stellar Horizon - Inicializando ===
+Versao Core: v27.1.0
+Versao Horizon: devel
+Network: Test SDF Network ; September 2015
+PostgreSQL ja inicializado.
+2026/07/22 01:03:21 DEPRECATED - The usage of the flag --enable-captive-core-ingestion has been deprecated. Horizon 
+now uses Captive-Core ingestion by default and this flag will soon be removed in the future.
+2026/07/22 01:03:21 Checking DB migrations...
+invalid config: network-passphrase parameter not allowed with the network parameter
+2026-07-22 01:03:47.317 UTC [37] FATAL:  lock file "postmaster.pid" already exists
+2026-07-22 01:03:47.317 UTC [37] HINT:  Is another postmaster (PID 38) running in data directory 
+"/var/lib/postgresql/16/main"?
+2026/07/22 01:04:47 DEPRECATED - The usage of the flag --enable-captive-core-ingestion has been deprecated. Horizon 
+now uses Captive-Core ingestion by default and this flag will soon be removed in the future.
+2026/07/22 01:04:47 Checking DB migrations...
+2026/07/22 01:04:47 dial tcp [::1]:5432: connect: connection refused
+Iniciando PostgreSQL...
+Aguardando PostgreSQL... (1/30)
+Aguardando PostgreSQL... (2/30)
+PostgreSQL pronto (PID 34).
+Configurando horizon.env...
+Executando migracoes do Horizon...
+2026/07/22 01:02:53 No migrations applied.
+Iniciando nginx na porta 8000...
+nginx rodando (PID 75).
+
+=== Iniciando stellar-horizon ===
+API publica:  http://0.0.0.0:8000 (nginx -> 8001)
+PostgreSQL:   localhost:5432
+Captive Core: P2P=11725 HTTP=11726
+
+Iniciando stellar-horizon serve...
+=== Stellar Horizon - Inicializando ===
+Versao Core: v27.1.0
+Versao Horizon: devel
+Network: Test SDF Network ; September 2015
+PostgreSQL ja inicializado.
+Iniciando PostgreSQL...
+Aguardando PostgreSQL... (1/30)
+Aguardando PostgreSQL... (2/30)
+PostgreSQL pronto (PID 34).
+Configurando horizon.env...
+Executando migracoes do Horizon...
+2026/07/22 01:03:04 No migrations applied.
+Iniciando nginx na porta 8000...
+nginx rodando (PID 76).
+
+=== Iniciando stellar-horizon ===
+API publica:  http://0.0.0.0:8000 (nginx -> 8001)
+PostgreSQL:   localhost:5432
+Captive Core: P2P=11725 HTTP=11726
+
+Iniciando stellar-horizon serve...
+=== Stellar Horizon - Inicializando ===
+Versao Core: v27.1.0
+Versao Horizon: devel
+Network: Test SDF Network ; September 2015
+PostgreSQL ja inicializado.
+Iniciando PostgreSQL...
+Aguardando PostgreSQL... (1/30)
+Aguardando PostgreSQL... (2/30)
+PostgreSQL pronto (PID 35).
+Configurando horizon.env...
+Executando migracoes do Horizon...
+2026/07/22 01:03:21 No migrations applied.
+Iniciando nginx na porta 8000...
+nginx rodando (PID 76).
+
+=== Iniciando stellar-horizon ===
+API publica:  http://0.0.0.0:8000 (nginx -> 8001)
+PostgreSQL:   localhost:5432
+Captive Core: P2P=11725 HTTP=11726
+
+Iniciando stellar-horizon serve...
+=== Stellar Horizon - Inicializando ===
+Versao Core: v27.1.0
+Versao Horizon: devel
+Network: Test SDF Network ; September 2015
+PostgreSQL ja inicializado.
+Iniciando PostgreSQL...
+Aguardando PostgreSQL... (1/30)
+Aguardando PostgreSQL... (2/30)
+Aguardando PostgreSQL... (3/30)
+Aguardando PostgreSQL... (4/30)
+Aguardando PostgreSQL... (5/30)
+Aguardando PostgreSQL... (6/30)
+Aguardando PostgreSQL... (7/30)
+Aguardando PostgreSQL... (8/30)
+Aguardando PostgreSQL... (9/30)
+Aguardando PostgreSQL... (10/30)
+Aguardando PostgreSQL... (11/30)
+Aguardando PostgreSQL... (12/30)
+Aguardando PostgreSQL... (13/30)
+Aguardando PostgreSQL... (14/30)
+Aguardando PostgreSQL... (15/30)
+Aguardando PostgreSQL... (16/30)
+Aguardando PostgreSQL... (17/30)
+Aguardando PostgreSQL... (18/30)
+Aguardando PostgreSQL... (19/30)
+Aguardando PostgreSQL... (20/30)
+Aguardando PostgreSQL... (21/30)
+Aguardando PostgreSQL... (22/30)
+Aguardando PostgreSQL... (23/30)
+Aguardando PostgreSQL... (24/30)
+Aguardando PostgreSQL... (25/30)
+Aguardando PostgreSQL... (26/30)
+Aguardando PostgreSQL... (27/30)
+Aguardando PostgreSQL... (28/30)
+Aguardando PostgreSQL... (29/30)
+Aguardando PostgreSQL... (30/30)
+Criando banco horizon e usuario...
+Banco horizon pronto.
+Configurando horizon.env...
+Executando migracoes do Horizon...
+dial tcp [::1]:5432: connect: connection refused
+Iniciando nginx na porta 8000...
+nginx rodando (PID 233).
+
+=== Iniciando stellar-horizon ===
+API publica:  http://0.0.0.0:8000 (nginx -> 8001)
+PostgreSQL:   localhost:5432
+Captive Core: P2P=11725 HTTP=11726
+
+Iniciando stellar-horizon serve...
+=== Stellar Horizon - Inicializando ===
