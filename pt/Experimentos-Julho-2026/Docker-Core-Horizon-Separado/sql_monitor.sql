@@ -1,0 +1,1 @@
+CREATE EXTENSION IF NOT EXISTS pg_stat_statements; SELECT 'pg_stat_statements loaded' as status; SELECT name, setting FROM pg_settings WHERE name LIKE 'shared_preload_libraries' OR name LIKE 'pg_stat%';

@@ -1,0 +1,62 @@
+sequenceDiagram
+    participant HA as History Archives<br/>history.stellar.org
+    participant P2P as Peers Testnet
+    participant CN as Stellar Core Node<br/>PID 291
+    participant CC as Captive Core<br/>PID 3985
+    participant HZ as Horizon<br/>PID 349
+    participant PG as PostgreSQL<br/>horizon DB
+
+    rect rgb(20, 30, 50)
+        Note over CN,HZ: PHASE 1: DISCOVERY
+        P2P->>CN: Connect to peers (port 11625)
+        P2P-->>CN: Ledger info: SCR = 3,629,377
+        CN->>HA: Fetch latest checkpoint
+    end
+
+    rect rgb(30, 50, 30)
+        Note over CN,HZ: PHASE 2: STATE DOWNLOAD
+        CN->>HA: Download state file (history-*.json)
+        CN->>HA: Download buckets (36-37 .xdr files)
+        CN->>CN: Verify SHA-256 hashes
+        CN->>CN: Apply buckets (0% -> 100%)
+        Note over CN: Succeeded: download-verify-apply-buckets
+    end
+
+    rect rgb(50, 30, 30)
+        Note over CN,HZ: PHASE 3: CHECKPOINTS
+        CN->>HA: Download checkpoint ledgers
+        CN->>CN: Apply checkpoints (2 left -> 0)
+        CN->>CN: Apply buffered ledgers
+        CN->>CN: Synced!
+        Note over CN: Node Synced!<br/>Participating in SCP consensus
+    end
+
+    rect rgb(20, 50, 50)
+        Note over CN,HZ: PHASE 4: HORIZON INGESTION
+        HZ->>HZ: Start captive core subprocess
+        HZ->>CC: stellar-core --console run --metadata-output-stream fd:3
+        CC->>HA: Buckets download (.xdr files)
+        CC->>HA: Checkpoints download
+        CC->>HA: Ledger files download
+        loop Every 64 ledgers (checkpoint)
+            CC->>HZ: Metadata stream (fd:3)
+            HZ->>HZ: Process transactions & operations
+            HZ->>PG: INSERT into history_transactions
+            HZ->>PG: INSERT into history_operations
+            HZ->>PG: INSERT into history_effects
+            HZ->>PG: UPDATE accounts, offers, trust_lines
+        end
+        Note over HZ: Horizon: ingestion caught up
+    end
+
+    rect rgb(50, 50, 20)
+        Note over CN,HZ: PHASE 5: CONTINUOUS OPERATION
+        P2P->>CN: New ledgers (SCP consensus)
+        CN->>CC: HTTP /info (latest ledger)
+        CC->>HZ: Metadata stream (new transactions)
+        HZ->>PG: Real-time updates
+        User->>HZ: GET http://localhost:8000/accounts/:id
+        HZ->>PG: SELECT * FROM accounts WHERE ...
+        PG-->>HZ: Account data
+        HZ-->>User: JSON response
+    end

@@ -1,0 +1,52 @@
+﻿graph TB
+    subgraph BUCKET_LIST["Bucket List (11 levels: 0 to 10)"]
+        L0["Level 0<br/>~25 KB<br/>2-4 buckets<br/>Recent ledgers"]
+        L1["Level 1<br/>~47 KB<br/>2-4 buckets"]
+        L2["Level 2<br/>~1.6 MB<br/>2-4 buckets"]
+        L3["Level 3<br/>~1.1 MB<br/>2-4 buckets"]
+        L4["Level 4<br/>~1.8 MB<br/>2-4 buckets"]
+        L5["Level 5<br/>~6.5 MB<br/>2 buckets"]
+        L6["Level 6<br/>~40 MB<br/>2 buckets"]
+        L7["Level 7<br/>~103 MB<br/>2 buckets"]
+        L8["Level 8<br/>~211 MB<br/>2 buckets"]
+        L9["Level 9<br/>~629 MB<br/>2 buckets"]
+        L10["Level 10<br/>~822 MB<br/>2 buckets<br/>Complete snapshot"]
+    end
+
+    subgraph FILES["Files per Bucket"]
+        XDR["bucket-{sha256}.xdr<br/>Serialized XDR data"]
+        INDEX["bucket-{sha256}.index<br/>Index for lookup<br/>binary search"]
+    end
+
+    LEDGER["NEW LEDGER<br/>state updates"] -->|"enters as<br/>level 0 bucket"| L0
+    L0 -->|"periodic merge<br/>every 64 ledgers"| L1
+    L1 -->|merge| L2
+    L2 -->|merge| L3
+    L3 -->|merge| L4
+    L4 -->|merge| L5
+    L5 -->|merge| L6
+    L6 -->|merge| L7
+    L7 -->|merge| L8
+    L8 -->|merge| L9
+    L9 -->|merge| L10
+
+    L0 -.->|"contains .xdr + .index"| FILES
+    L1 -.-> FILES
+
+    HISTORY["History Archives<br/>history.stellar.org"] -->|"download<br/>initial catchup"| L10
+    L10 -->|"upload<br/>new snapshot"| HISTORY
+
+    style L0 fill:#c8e6c9,color:#000
+    style L1 fill:#c8e6c9,color:#000
+    style L2 fill:#a5d6a7,color:#000
+    style L3 fill:#a5d6a7,color:#000
+    style L4 fill:#81c784,color:#000
+    style L5 fill:#81c784,color:#000
+    style L6 fill:#66bb6a,color:#000
+    style L7 fill:#66bb6a,color:#000
+    style L8 fill:#4caf50,color:#fff
+    style L9 fill:#43a047,color:#fff
+    style L10 fill:#388e3c,color:#fff
+    style BUCKET_LIST fill:#1b4332,color:#fff,stroke:#2d6a4f
+    style FILES fill:#2d2d2d,color:#fff,stroke:#555
+    style HISTORY fill:#1565c0,color:#fff

@@ -1,0 +1,7 @@
+*
+!.dockerignore
+!Dockerfile
+!stellar-captive-core.cfg
+!horizon.env
+!nginx.conf
+!entrypoint.sh

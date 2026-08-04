@@ -1,0 +1,80 @@
+networks:
+  mainnet-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: "172.21.0.0/24"
+
+volumes:
+  core-data:
+  horizon-data:
+  pgdata:
+
+services:
+  # ─────────────────────────────────────────────
+  # Container 1: Stellar Core (Validador)
+  # Participa do consenso SCP na rede MainNet
+  # Portas: 11625 (P2P), 11626 (HTTP admin)
+  # ─────────────────────────────────────────────
+  stellar-core:
+    build:
+      context: ./stellar-core
+      dockerfile: Dockerfile
+    container_name: stellar-core-mainnet
+    networks:
+      mainnet-network:
+        ipv4_address: 172.21.0.10
+    ports:
+      - "11627:11625/tcp"
+      - "11628:11626/tcp"
+    volumes:
+      - core-data:/opt/stellar/core
+    environment:
+      - NETWORK=pubnet
+      - LOG_LEVEL=info
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:11626/info"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 120s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "3"
+
+  # ─────────────────────────────────────────────
+  # Container 2: Stellar Horizon (API + Ingestão)
+  # Fornece API REST + gerencia captive core
+  # Portas: 8001 (HTTP público), 5432 (PostgreSQL)
+  # ─────────────────────────────────────────────
+  stellar-horizon:
+    build:
+      context: ./stellar-horizon
+      dockerfile: Dockerfile
+    container_name: stellar-horizon-mainnet
+    networks:
+      mainnet-network:
+        ipv4_address: 172.21.0.11
+    ports:
+      - "8001:8000/tcp"
+    volumes:
+      - horizon-data:/opt/stellar/horizon
+      - pgdata:/var/lib/postgresql/16/main
+    environment:
+      - NETWORK=pubnet
+      - LOG_LEVEL=info
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:8001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 180s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "3"

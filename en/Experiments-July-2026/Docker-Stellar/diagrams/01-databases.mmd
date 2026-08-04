@@ -1,0 +1,81 @@
+erDiagram
+    POSTGRESQL_HORIZON ||--o{ ACCOUNTS : "1.2 GB total"
+    POSTGRESQL_HORIZON ||--o{ ACCOUNTS_SIGNERS : ""
+    POSTGRESQL_HORIZON ||--o{ TRUST_LINES : ""
+    POSTGRESQL_HORIZON ||--o{ OFFERS : ""
+    POSTGRESQL_HORIZON ||--o{ HISTORY_TRANSACTIONS : ""
+    POSTGRESQL_HORIZON ||--o{ HISTORY_OPERATIONS : ""
+    POSTGRESQL_HORIZON ||--o{ HISTORY_LEDGERS : ""
+    POSTGRESQL_HORIZON ||--o{ CLAIMABLE_BALANCES : ""
+    POSTGRESQL_HORIZON ||--o{ CONTRACT_ASSET_BALANCES : ""
+    POSTGRESQL_HORIZON ||--o{ LIQUIDITY_POOLS : ""
+
+    SQLITE_CORE_NODE ||--o{ STELLAR_DB : "stellar.db ~18MB"
+    SQLITE_CORE_NODE ||--o{ STELLAR_MISC_DB : "stellar-misc.db"
+
+    SQLITE_CAPTIVE_CORE ||--o{ CAPTIVE_STELLAR_DB : "captive-core/stellar.db ~21MB"
+    SQLITE_CAPTIVE_CORE ||--o{ CAPTIVE_MISC_DB : "captive-core/stellar-misc.db"
+
+    BUCKET_LIST_NODE ||--o{ BUCKETS_NODE : "~4.7 GB in .xdr files"
+    BUCKET_LIST_CAPTIVE ||--o{ BUCKETS_CAPTIVE : "~5.4 GB in .xdr files"
+
+    POSTGRESQL_HORIZON {
+        string database "horizon"
+        string user     "stellar"
+        int    tables   "33 tables"
+        string engine   "PostgreSQL 14"
+    }
+
+    ACCOUNTS {
+        string table     "accounts"
+        string size      "497 MB"
+        string desc      "Accounts with balances and sequences"
+    }
+
+    ACCOUNTS_SIGNERS {
+        string table     "accounts_signers"
+        string size      "428 MB"
+        string desc      "Signers of each account"
+    }
+
+    TRUST_LINES {
+        string table     "trust_lines"
+        string size      "107 MB"
+        string desc      "Trust lines of non-native assets"
+    }
+
+    OFFERS {
+        string table     "offers"
+        string size      "12 MB"
+        string desc      "Open offers"
+    }
+
+    HISTORY_TRANSACTIONS {
+        string table     "history_transactions"
+        string size      "10 MB"
+        string desc      "Historical transactions"
+    }
+
+    SQLITE_CORE_NODE {
+        string engine "SQLite"
+        string path   "/opt/stellar/core/"
+        string desc   "Stellar Core Node metadata"
+    }
+
+    SQLITE_CAPTIVE_CORE {
+        string engine "SQLite"
+        string path   "/opt/stellar/horizon/captive-core/"
+        string desc   "Captive Core metadata"
+    }
+
+    BUCKET_LIST_NODE {
+        string format ".xdr + .index files"
+        string path   "/opt/stellar/core/buckets/"
+        string levels "11 levels (0-10)"
+    }
+
+    BUCKET_LIST_CAPTIVE {
+        string format ".xdr + .index files"
+        string path   "/opt/stellar/horizon/captive-core/captive-core/buckets/"
+        string levels "11 levels (0-10)"
+    }

@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+<title>Experiment 3 — 100 Ledgers | Stellar Testnet</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+*{box-sizing:border-box}
+body{font-family:'Segoe UI',Arial,sans-serif;max-width:1200px;margin:0 auto;padding:30px;background:#0d1b2a;color:#e0e0e0;font-size:14px;line-height:1.7}
+h1{color:#e94560;font-size:26px;border-bottom:3px solid #e94560;padding-bottom:10px}
+h2{color:#e94560;font-size:20px;margin-top:40px} h3{color:#81b29a;font-size:16px}
+.chart-container{background:#1a1a2e;padding:25px;border-radius:10px;margin:30px 0;border:1px solid #16213e}
+.chart-container h3{margin-top:0;color:#e94560}
+.caption{color:#b0b0b0;font-size:13px;margin-top:15px;text-align:justify;padding:15px;background:#16213e;border-radius:6px;border-left:4px solid #3d5a80;line-height:1.6}
+.caption b{color:#fff}
+.scroll-wrap{overflow-x:auto;overflow-y:hidden;width:100%}
+.scroll-wrap canvas{width:4000px!important;height:350px!important;display:block}
+.scroll-wrap.c80 canvas{height:200px!important}
+.chart-legend{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:center;padding:12px 20px;margin-top:8px;background:rgba(30,40,60,0.6);border-radius:6px;border:1px solid #16213e}
+.chart-legend span{display:flex;align-items:center;font-size:13px;color:#ccc;gap:6px}
+.chart-legend span i{display:inline-block;width:14px;height:14px;border-radius:3px;flex-shrink:0}
+.summary{background:linear-gradient(135deg,#16213e,#1a1a2e);padding:25px;border-radius:10px;margin:30px 0;border:1px solid #3d5a80;display:grid;grid-template-columns:auto auto;gap:10px 40px}
+.summary h2{grid-column:1/-1;margin:0 0 10px 0}
+.si{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid #1f2937}
+.si .l{color:#888} .si .v{color:#81b29a;font-weight:bold}
+.good{color:#4caf50;font-weight:bold} .bad{color:#e94560;font-weight:bold}
+.info{color:#3d5a80;font-weight:bold} .accent{color:#f2cc8f}
+</style></head><body>
+
+<h1>Experiment 3 — Monitoring of 100 Ledgers</h1>
+<p style="color:#888;"><b>Network:</b> Test SDF Network | <b>Container:</b> stellar/quickstart:testing |
+<b>Date:</b> 16/07/2026 | <b>Ledgers:</b> L#3647282 to L#3647381 | <b>Period:</b> ~8 min</p>
+
+<div class="summary"><div class="si"><span class="l">Ledgers</span><span class="v">100 (~8 min)</span></div><div class="si"><span class="l">OK</span><span class="v"><span class="good">765</span></span></div><div class="si"><span class="l">FAIL</span><span class="v"><span class="bad">171</span></span></div><div class="si"><span class="l">Average OK/ledger</span><span class="v">7.7</span></div><div class="si"><span class="l">Success</span><span class="v"><span class="good">81.7%</span></span></div><div class="si"><span class="l">Throughput</span><span class="v">1.53 tx/s</span></div><div class="si"><span class="l">Proposals</span><span class="v"><span class="info">1440</span></span></div><div class="si"><span class="l">Executed</span><span class="v">960</span></div><div class="si"><span class="l">Discarded</span><span class="v"><span class="bad">480 (33.3%)</span></span></div><div class="si"><span class="l">Fee pool</span><span class="v"><span class="good">+6.2009 XLM</span></span></div><div class="si"><span class="l">Final backlog</span><span class="v"><span class="info">504 ops</span></span></div><div class="si"><span class="l">Categorized failures</span><span class="v">171</span></div></div>
+
+<div class="chart-container"><h3>1. Transactions per Ledger — OK vs FAIL</h3>
+  <div class="scroll-wrap"><canvas id="c1"></canvas></div>
+  <div class="caption"><b>Analysis:</b> Average of <b>7.7 OK</b> and <b>1.7 FAIL</b>/ledger. Success: <b>81.7%</b>. Throughput: <b>1.53 tx/s</b>.</div></div>
+<div class="chart-container"><h3>2. Operations in TxSet vs Executed</h3>
+  <div class="scroll-wrap"><canvas id="c2"></canvas></div>
+  <div class="caption"><b>Analysis:</b> <b>1440 proposed</b> vs <b>960 executed</b> — discard of <b>480 (33.3%)</b>.</div></div>
+<div class="chart-container"><h3>3. Success Rate (%) per Ledger</h3>
+  <div class="scroll-wrap c80"><canvas id="c3"></canvas></div>
+  <div class="caption"><b>Analysis:</b> Average of <b>81.7%</b>. Variation of the percentage of OK transactions in each ledger.</div></div>
+<div class="chart-container"><h3>4. Cumulative Fee Pool</h3>
+  <div class="scroll-wrap c80"><canvas id="c4"></canvas></div>
+  <div class="caption"><b>Analysis:</b> Growth of <b>+6.2009 XLM</b> in 100 ledgers. Linear curve = no congestion.</div></div>
+<div class="chart-container"><h3>5. Mempool Flow</h3>
+  <div class="scroll-wrap"><canvas id="c5"></canvas></div>
+  <div class="caption"><b>Analysis:</b> <span class="info">Blue = inflow</span>, <span class="good">green = confirmed</span>, <span class="bad">red = rejected</span>.</div></div>
+<div class="chart-container"><h3>6. Mempool Cumulative — Backlog</h3>
+  <div class="scroll-wrap c80"><canvas id="c6"></canvas></div>
+  <div class="caption"><b>Analysis:</b> Final backlog: <b class="accent">504 ops</b>. Peak: <b>504</b>.</div></div>
+<div class="chart-container"><h3>7. Rejected Transactions by Failure Type</h3>
+  <div class="scroll-wrap c80"><canvas id="c7"></canvas></div>
+  <div class="caption" id="cap7"></div></div>
+
+<script>
+const L = ["L#3647282","L#3647283","L#3647284","L#3647285","L#3647286","L#3647287","L#3647288","L#3647289","L#3647290","L#3647291","L#3647292","L#3647293","L#3647294","L#3647295","L#3647296","L#3647297","L#3647298","L#3647299","L#3647300","L#3647301","L#3647302","L#3647303","L#3647304","L#3647305","L#3647306","L#3647307","L#3647308","L#3647309","L#3647310","L#3647311","L#3647312","L#3647313","L#3647314","L#3647315","L#3647316","L#3647317","L#3647318","L#3647319","L#3647320","L#3647321","L#3647322","L#3647323","L#3647324","L#3647325","L#3647326","L#3647327","L#3647328","L#3647329","L#3647330","L#3647331","L#3647332","L#3647333","L#3647334","L#3647335","L#3647336","L#3647337","L#3647338","L#3647339","L#3647340","L#3647341","L#3647342","L#3647343","L#3647344","L#3647345","L#3647346","L#3647347","L#3647348","L#3647349","L#3647350","L#3647351","L#3647352","L#3647353","L#3647354","L#3647355","L#3647356","L#3647357","L#3647358","L#3647359","L#3647360","L#3647361","L#3647362","L#3647363","L#3647364","L#3647365","L#3647366","L#3647367","L#3647368","L#3647369","L#3647370","L#3647371","L#3647372","L#3647373","L#3647374","L#3647375","L#3647376","L#3647377","L#3647378","L#3647379","L#3647380","L#3647381"];
+const o = [7,9,7,10,8,9,6,7,9,8,10,8,9,6,9,11,7,7,4,2,6,7,3,8,6,6,6,11,11,8,7,7,6,9,7,9,10,9,6,7,6,6,8,9,5,6,3,6,12,11,7,8,14,9,9,11,7,11,7,8,9,7,8,6,5,7,5,9,7,4,11,6,8,8,6,8,9,7,7,8,9,8,5,8,7,10,10,9,7,8,6,5,12,7,8,5,8,6,7,10]; const f = [3,2,3,1,2,1,3,2,3,3,2,2,0,2,1,1,2,1,1,1,2,2,2,3,1,1,2,2,1,1,1,1,0,2,3,2,2,1,0,2,1,2,1,1,2,1,0,3,2,1,2,1,3,2,1,1,0,1,0,1,3,2,3,1,2,2,4,1,2,2,2,4,3,2,2,2,0,1,2,3,2,1,3,1,2,1,2,2,2,1,2,3,1,2,0,2,2,1,2,3];
+const p = [10,11,9,12,10,11,8,9,11,10,13,10,11,8,11,13,9,10,4,2,6,7,3,8,6,9,9,12,14,10,9,9,8,11,9,11,12,11,8,9,8,8,10,11,7,8,4,6,12,11,7,8,17,13,12,14,9,13,9,10,11,11,10,8,7,10,7,11,9,6,13,8,10,10,7,11,12,9,9,10,11,10,7,10,9,12,12,11,9,10,8,7,14,9,12,8,12,9,9,12]; const t = [15,16,14,16,14,15,13,15,16,14,19,15,11,13,12,14,15,14,6,6,10,12,6,40,7,13,12,17,16,14,10,13,8,16,14,16,15,15,8,14,9,13,12,15,10,12,4,38,15,15,11,12,22,18,13,18,9,17,9,14,16,16,15,12,11,15,13,15,13,12,17,42,14,15,9,16,12,13,12,16,14,14,12,14,12,16,14,16,12,14,11,13,15,14,12,39,16,13,12,18];
+const fe = [400297.6362137,400297.654874,400300.238062,400300.2554834,400300.2690151,400300.281087,400300.291049,400300.3065194,400300.3224426,400300.3417823,400300.352592,400300.3765944,400300.3868833,400302.0429074,400302.0550308,400302.075656,400302.0852747,400302.0967635,400302.1099321,400302.1154651,400302.1261069,400302.1542559,400302.1649619,400302.1861029,400302.1990133,400302.21433,400302.2228863,400302.2413784,400302.259431,400302.2716675,400302.283798,400302.2995911,400302.3101326,400302.3304162,400302.3391238,400302.3636095,400302.3861037,400302.4047861,400302.4137094,400302.4276181,400302.4375587,400302.4492103,400302.4597491,400302.479605,400302.492329,400302.5073081,400302.5091411,400302.5276163,400302.555372,400302.5797924,400302.5882717,400302.5979369,400302.6276101,400302.6361617,400302.6461501,400302.6582109,400302.6703624,400302.69067,400302.702158,400302.7181362,400302.7313188,400302.747183,400302.7617169,400302.7748212,400302.7820827,400302.7957423,400302.8012779,400302.8192595,400302.8317505,400302.8373434,400302.8584976,400302.8650963,400302.8915471,400302.9052203,400302.9225061,400302.932491,400302.9515927,400302.9541974,400302.9612694,400302.972629,400302.9897373,400303.0020193,400303.0116452,400303.0211804,400303.0395799,400303.0521059,400303.0723769,400303.0859306,400303.098752,400303.1131028,400303.1342775,400303.1399154,400303.1644208,400303.7503586,400303.7673567,400303.7750019,400303.7930993,400303.8044754,400303.8146766,400303.8370816]; const pc = ["70.0","81.8","70.0","90.9","80.0","90.0","66.7","77.8","75.0","72.7","83.3","80.0","100.0","75.0","90.0","91.7","77.8","87.5","80.0","66.7","75.0","77.8","60.0","72.7","85.7","85.7","75.0","84.6","91.7","88.9","87.5","87.5","100.0","81.8","70.0","81.8","83.3","90.0","100.0","77.8","85.7","75.0","88.9","90.0","71.4","85.7","100.0","66.7","85.7","91.7","77.8","88.9","82.4","81.8","90.0","91.7","100.0","91.7","100.0","88.9","75.0","77.8","72.7","85.7","71.4","77.8","55.6","90.0","77.8","66.7","84.6","60.0","72.7","80.0","75.0","80.0","100.0","87.5","77.8","72.7","81.8","88.9","62.5","88.9","77.8","90.9","83.3","81.8","77.8","88.9","75.0","62.5","92.3","77.8","100.0","71.4","80.0","85.7","77.8","76.9"];
+const ci = [15,31,45,61,75,90,103,118,134,148,167,182,193,206,218,232,247,261,267,273,283,295,301,341,348,361,373,390,406,420,430,443,451,467,481,497,512,527,535,549,558,571,583,598,608,620,624,662,677,692,703,715,737,755,768,786,795,812,821,835,851,867,882,894,905,920,933,948,961,973,990,1032,1046,1061,1070,1086,1098,1111,1123,1139,1153,1167,1179,1193,1205,1221,1235,1251,1263,1277,1288,1301,1316,1330,1342,1381,1397,1410,1422,1440]; const co = [10,21,31,42,52,62,71,80,92,103,115,125,134,142,152,164,173,181,186,189,197,206,211,222,229,236,244,257,269,278,286,294,300,311,321,332,344,354,360,369,376,384,393,403,410,417,420,429,443,455,464,473,490,501,511,523,530,542,549,558,570,579,590,597,604,613,622,632,641,647,660,670,681,691,699,709,718,726,735,746,757,766,774,783,792,803,815,826,835,844,852,860,873,882,890,897,907,914,923,936]; const cd = [5,10,14,19,23,28,32,38,42,45,52,57,59,64,66,68,74,80,81,84,86,89,90,119,119,125,129,133,137,142,144,149,151,156,160,165,168,173,175,180,182,187,190,195,198,203,204,233,234,237,239,242,247,254,257,263,265,270,272,277,281,288,292,297,301,307,311,316,320,326,330,362,365,370,371,377,380,385,388,393,396,401,405,410,413,418,420,425,428,433,436,441,443,448,452,484,490,496,499,504];
+const cats = ["PAYMENT_NOTRUST","PAYMENT_NODESTINATION","PAYMENT_UNDERFUNDED","SOROBAN_TRAPPED","DECODE_ERR","OP_TOOMANYSUBENTRIES","OP_CREATEACCOUNT"];
+const fal = [[2,1,2,1,2,1,2,2,2,1,2,1,0,1,0,0,2,1,1,1,2,1,1,1,0,1,1,1,1,1,0,1,0,1,2,1,1,1,0,1,0,1,1,1,1,1,0,1,1,1,2,1,2,1,0,1,0,1,0,1,2,1,2,1,2,1,2,1,2,2,2,2,1,1,0,1,0,1,1,1,1,1,2,1,1,1,0,1,1,1,1,1,0,1,0,1,2,1,1,1],[0,1,1,0,0,0,0,0,0,1,0,0,0,0,1,1,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0,0,1,1,0,0,0,1,1,0,0,0,0,0,0,1,0,0,0,0,1,1,0,0,0,0,0,0,1,1,0,0,0,1,0,0,0,0,0,0,0,1,1,0,0,0,2,1,0,1,0,1,0,0,1,0,0,0,0,1,1,0,0,0,0,0,0],[1,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,2,0,0,0,0,0,0,0,1],[0,0,0,0,0,0,1,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,2,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]];
+const fnm = {"PAYMENT_NOTRUST":"No trust line","PAYMENT_NODESTINATION":"Nonexistent destination","PAYMENT_UNDERFUNDED":"Insufficient balance","SOROBAN_TRAPPED":"Soroban contract error","DECODE_ERR":"Decoding error","OP_TYPE_REVOKESPONSORSHIP":"Revoke sponsorship","OP_TYPE_MANAGESELLOFFER":"Manage sell offer","OP_TOOMANYSUBENTRIES":"Too many subentries","OP_TYPE_CHANGETRUST":"Change trust line"};
+const fc = ['#e94560','#f2cc8f','#e07a5f','#6c5b7b','#3d5a80','#81b29a','#c8e6c9','#4caf50','#ff9800'];
+
+function mkLegend(canvasId, ds) {
+  const wrap = document.getElementById(canvasId).closest('.chart-container');
+  const box = document.createElement('div');
+  box.className = 'chart-legend';
+  ds.forEach(d => {
+    const color = d.borderColor || d.backgroundColor;
+    box.innerHTML += '<span><i style="background:'+color+'"></i>'+d.label+'</span>';
+  });
+  wrap.appendChild(box);
+}
+function sb(id, ti, ds, co, st) { const ch = new Chart(document.getElementById(id),{type:'bar',data:{labels:L,datasets:ds.map((d,i)=>({label:ti[i],data:d,backgroundColor:co[i],borderRadius:1,categoryPercentage:0.8,barPercentage:0.9}))},options:{responsive:false,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#aaa',autoSkip:false,maxRotation:90}},y:{ticks:{color:'#aaa'},stacked:!!st}}}}); mkLegend(id, ch.data.datasets); }
+function sl(id, ds, yo) { var yOpts = Object.assign({ticks:{color:'#aaa'}}, yo||{}); var ch = new Chart(document.getElementById(id),{type:'line',data:{labels:L,datasets:ds},options:{responsive:false,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#aaa',autoSkip:false,maxRotation:90}},y:yOpts}}}); mkLegend(id, ch.data.datasets); }
+
+sb('c1',['OK','FAIL'],[o,f],['#4caf50','#e94560'],true);
+sb('c2',['Proposed (TxSet)','Executed'],[t,p],['#3d5a80','#81b29a'],false);
+sb('c5',['Inflow (TxSet)','Confirmed (OK)','Rejected (FAIL)'],[t,o,f],['#3d5a80','#4caf50','#e94560'],true);
+sl('c3',[{label:'% Success',data:pc,borderColor:'#4caf50',backgroundColor:'rgba(76,175,80,0.1)',fill:true,tension:0.3,borderWidth:1,pointRadius:0,pointHoverRadius:3}],{min:50,max:100});
+sl('c4',[{label:'Fee Pool (XLM)',data:fe,borderColor:'#f2cc8f',backgroundColor:'rgba(242,204,143,0.1)',fill:true,tension:0.3,borderWidth:1,pointRadius:0,pointHoverRadius:3}],{});
+sl('c6',[{label:'Cumulative proposed',data:ci,borderColor:'#3d5a80',backgroundColor:'rgba(61,90,128,0.1)',fill:true,tension:0.2,borderWidth:1.5,pointRadius:0},{label:'Cumulative processed',data:co,borderColor:'#81b29a',backgroundColor:'rgba(129,178,154,0.1)',fill:true,tension:0.2,borderWidth:1.5,pointRadius:0},{label:'Backlog',data:cd,borderColor:'#f2cc8f',backgroundColor:'rgba(242,204,143,0.1)',fill:true,tension:0.3,borderWidth:1.5,borderDash:[5,3],pointRadius:0}],{});
+sl('c7',cats.map((c,i)=>({label:fnm[c]||c,data:fal[i],borderColor:fc[i%fc.length],backgroundColor:fc[i%fc.length]+'33',fill:false,tension:0.3,borderWidth:1.2,pointRadius:0})),{beginAtZero:true});
+
+// Fail caption
+const totalFailures = 171;
+const fSorted = [["PAYMENT_NOTRUST",105],["PAYMENT_NODESTINATION",28],["PAYMENT_UNDERFUNDED",18],["SOROBAN_TRAPPED",13],["DECODE_ERR",4],["OP_TOOMANYSUBENTRIES",2],["OP_CREATEACCOUNT",1]];
+const fDesc = {'PAYMENT_NOTRUST':'no trust line — destination account needs to establish trust with the issuer','PAYMENT_NODESTINATION':'nonexistent destination account — needs to be created via CreateAccount','PAYMENT_UNDERFUNDED':'insufficient balance for payment + fee (1 XLM reserve)','SOROBAN_TRAPPED':'Soroban contract execution interrupted','DECODE_ERR':'malformed XDR or future protocol','OP_TYPE_REVOKESPONSORSHIP':'nonexistent sponsorship to revoke','OP_TYPE_MANAGESELLOFFER':'invalid or already filled offer','OP_TOOMANYSUBENTRIES':'1000 subentries limit exceeded','OP_TYPE_CHANGETRUST':'invalid trust line operation'};
+document.getElementById('cap7').innerHTML = '<b>Analysis:</b> Distribution of <b>'+totalFailures+' failures</b> across '+cats.length+' categories.<br><br>' +
+  fSorted.map(([c,n]) => '<b>'+(fnm[c]||c)+':</b> '+n+' ('+(n/totalFailures*100).toFixed(0)+'%) — '+(fDesc[c]||'')).join('<br>');
+</script></body></html>

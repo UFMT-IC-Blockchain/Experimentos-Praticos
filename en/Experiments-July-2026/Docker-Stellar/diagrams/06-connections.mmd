@@ -1,0 +1,48 @@
+graph LR
+    subgraph INTERNET["Internet"]
+        V1["core-testnet1.stellar.org<br/>SDF Validator 1"]
+        V2["core-testnet2.stellar.org<br/>SDF Validator 2"]
+        V3["core-testnet3.stellar.org<br/>SDF Validator 3"]
+        HA1["history.stellar.org<br/>prd/core-testnet/<br/>core_testnet_001"]
+        HA2["history.stellar.org<br/>prd/core-testnet/<br/>core_testnet_002"]
+        HA3["history.stellar.org<br/>prd/core-testnet/<br/>core_testnet_003"]
+        PEERS["Random peers<br/>~10 P2P connections<br/>13.223.55.158<br/>44.204.146.210<br/>3.85.105.105<br/>44.206.255.84<br/>44.213.67.110<br/>98.91.174.101<br/>141.98.219.89<br/>54.159.155.163"]
+    end
+
+    subgraph DOCKER["Docker Network"]
+        CT["Container<br/>stellar-testnet<br/>172.18.0.2"]
+    end
+
+    subgraph HOST["Host Windows"]
+        USER["User<br/>localhost:8000"]
+    end
+
+    V1 -->|":11625 P2P"| CT
+    V2 -->|":11625 P2P"| CT
+    V3 -->|":11625 P2P"| CT
+    PEERS -->|":11625 P2P"| CT
+    PEERS -->|":11725 P2P<br/>Captive Core"| CT
+    
+    CT -->|"HISTORY curl<br/>state + buckets"| HA1
+    CT -->|"HISTORY curl"| HA2
+    CT -->|"HISTORY curl"| HA3
+
+    USER -->|"HTTP :8000<br/>Horizon API"| CT
+
+    linkStyle 0,1,2,3 stroke:#e94560,stroke-width:2
+    linkStyle 4 stroke:#81b29a,stroke-width:2
+    linkStyle 5,6,7 stroke:#3d5a80,stroke-width:2
+    linkStyle 8 stroke:#f2cc8f,stroke-width:2
+
+    style INTERNET fill:#0d1b2a,color:#fff,stroke:#1b263b
+    style V1 fill:#e07a5f,color:#fff
+    style V2 fill:#e07a5f,color:#fff
+    style V3 fill:#e07a5f,color:#fff
+    style HA1 fill:#3d5a80,color:#fff
+    style HA2 fill:#3d5a80,color:#fff
+    style HA3 fill:#3d5a80,color:#fff
+    style PEERS fill:#6c5b7b,color:#fff
+    style DOCKER fill:#1a1a2e,color:#fff,stroke:#e94560
+    style CT fill:#16213e,color:#fff,stroke:#0f3460
+    style HOST fill:#2d6a4f,color:#fff
+    style USER fill:#f2cc8f,color:#000

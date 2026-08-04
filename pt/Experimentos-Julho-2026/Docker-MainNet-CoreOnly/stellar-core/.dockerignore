@@ -1,0 +1,5 @@
+*
+!.dockerignore
+!Dockerfile
+!stellar-core.cfg
+!entrypoint.sh

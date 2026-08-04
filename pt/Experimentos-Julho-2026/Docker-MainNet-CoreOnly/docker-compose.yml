@@ -1,0 +1,39 @@
+networks:
+  mainnet-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: "172.22.0.0/24"
+
+volumes:
+  core-data:
+
+services:
+  stellar-core:
+    build:
+      context: ./stellar-core
+      dockerfile: Dockerfile
+    container_name: stellar-core-mainnet
+    networks:
+      mainnet-network:
+        ipv4_address: 172.22.0.10
+    ports:
+      - "11627:11625/tcp"
+      - "11628:11626/tcp"
+    volumes:
+      - core-data:/opt/stellar/core
+    environment:
+      - NETWORK=pubnet
+      - LOG_LEVEL=info
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:11626/info"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 120s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "50m"
+        max-file: "3"

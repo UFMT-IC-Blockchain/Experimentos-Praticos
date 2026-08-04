@@ -1,0 +1,714 @@
+=== Stellar Core Node - Inicializando ===
+Versao: v27.1.0
+Network: Test SDF Network ; September 2015
+Copiando configuracao do staging para o volume...
+Primeira execucao: inicializando banco do Core...
+2026-07-22T01:01:02.230 [default INFO] Config from /opt/stellar/core/etc/stellar-core.cfg
+2026-07-22T01:01:02.231 [default INFO] Generated QUORUM_SET: {
+   "t" : 2,
+   "v" : [ "sdf_testnet_2", "sdf_testnet_3", "sdf_testnet_1" ]
+}
+System.Management.Automation.RemoteException
+2026-07-22T01:01:02.410 GBE3F [default INFO] * 
+2026-07-22T01:01:02.410 GBE3F [default INFO] * The database has been initialized
+2026-07-22T01:01:02.410 GBE3F [default INFO] * 
+2026-07-22T01:01:02.492 GBE3F [default INFO] Dropping offers
+2026-07-22T01:01:02.500 GBE3F [default INFO] Successfully rebuilt ledger tables
+2026-07-22T01:01:02.506 GBE3F [default INFO] Establishing 8-entry connection pool to: sqlite3:///opt/stellar/core/stellar.db
+2026-07-22T01:01:02.537 GBE3F [default INFO] Connection effective settings:
+2026-07-22T01:01:02.537 GBE3F [default INFO] TARGET_PEER_CONNECTIONS: 8
+2026-07-22T01:01:02.537 GBE3F [default INFO] MAX_ADDITIONAL_PEER_CONNECTIONS: 64
+2026-07-22T01:01:02.537 GBE3F [default INFO] MAX_PENDING_CONNECTIONS: 500
+2026-07-22T01:01:02.537 GBE3F [default INFO] MAX_OUTBOUND_PENDING_CONNECTIONS: 56
+2026-07-22T01:01:02.537 GBE3F [default INFO] MAX_INBOUND_PENDING_CONNECTIONS: 444
+2026-07-22T01:01:02.537 GBE3F [default INFO] BACKGROUND_OVERLAY_PROCESSING=true
+2026-07-22T01:01:02.537 GBE3F [default INFO] PARALLEL_LEDGER_APPLY=true
+2026-07-22T01:01:02.537 GBE3F [default INFO] *
+2026-07-22T01:01:02.537 GBE3F [default INFO] * The next launch will catchup from the network afresh.
+2026-07-22T01:01:02.537 GBE3F [default INFO] *
+2026-07-22T01:01:02.537 GBE3F [default INFO] Application destructing
+2026-07-22T01:01:02.537 GBE3F [default INFO] Joining ledger close thread
+2026-07-22T01:01:02.537 GBE3F [default INFO] Joining worker thread
+2026-07-22T01:01:02.537 GBE3F [default INFO] Joining worker thread
+2026-07-22T01:01:02.537 GBE3F [default INFO] Joining worker thread
+2026-07-22T01:01:02.537 GBE3F [default INFO] Joining worker thread
+2026-07-22T01:01:02.537 GBE3F [default INFO] Joining worker thread
+2026-07-22T01:01:02.537 GBE3F [default INFO] Joining worker thread
+2026-07-22T01:01:02.537 GBE3F [default INFO] Joining worker thread
+2026-07-22T01:01:02.537 GBE3F [default INFO] Joining worker thread
+2026-07-22T01:01:02.537 GBE3F [default INFO] Joining worker thread
+2026-07-22T01:01:02.537 GBE3F [default INFO] Joining worker thread
+2026-07-22T01:01:02.537 GBE3F [default INFO] Joining overlay thread
+2026-07-22T01:01:02.537 GBE3F [default INFO] Joining eviction thread
+Inicializando historico...
+2026-07-22T01:01:02.538 GBE3F [default INFO] Joined all 12 threads
+2026-07-22T01:01:02.538 GBE3F [default INFO] Application destroyed
+2026-07-22T01:01:02.575 [default INFO] Config from /opt/stellar/core/etc/stellar-core.cfg
+2026-07-22T01:01:02.576 [default INFO] Generated QUORUM_SET: {
+   "t" : 2,
+   "v" : [ "sdf_testnet_2", "sdf_testnet_3", "sdf_testnet_1" ]
+}
+System.Management.Automation.RemoteException
+2026-07-22T01:01:02.585 GAUSC [default INFO] Connection effective settings:
+2026-07-22T01:01:02.585 GAUSC [default INFO] TARGET_PEER_CONNECTIONS: 8
+2026-07-22T01:01:02.585 GAUSC [default INFO] MAX_ADDITIONAL_PEER_CONNECTIONS: 64
+2026-07-22T01:01:02.585 GAUSC [default INFO] MAX_PENDING_CONNECTIONS: 500
+2026-07-22T01:01:02.585 GAUSC [default INFO] MAX_OUTBOUND_PENDING_CONNECTIONS: 56
+2026-07-22T01:01:02.585 GAUSC [default INFO] MAX_INBOUND_PENDING_CONNECTIONS: 444
+2026-07-22T01:01:02.585 GAUSC [default INFO] BACKGROUND_OVERLAY_PROCESSING=true
+2026-07-22T01:01:02.585 GAUSC [default INFO] PARALLEL_LEDGER_APPLY=true
+2026-07-22T01:01:02.585 GAUSC [default INFO] Application destructing
+2026-07-22T01:01:02.585 GAUSC [default INFO] Joining ledger close thread
+=== Stellar Core Node - Inicializando ===
+2026-07-22T01:01:02.586 GAUSC [default INFO] Joining worker thread
+2026-07-22T01:01:02.586 GAUSC [default INFO] Joining worker thread
+2026-07-22T01:01:02.586 GAUSC [default INFO] Joining worker thread
+2026-07-22T01:01:02.586 GAUSC [default INFO] Joining worker thread
+2026-07-22T01:01:02.586 GAUSC [default INFO] Joining worker thread
+2026-07-22T01:01:02.586 GAUSC [default INFO] Joining worker thread
+2026-07-22T01:01:02.586 GAUSC [default INFO] Joining worker thread
+2026-07-22T01:01:02.586 GAUSC [default INFO] Joining worker thread
+2026-07-22T01:01:02.586 GAUSC [default INFO] Joining worker thread
+2026-07-22T01:01:02.586 GAUSC [default INFO] Joining worker thread
+2026-07-22T01:01:02.586 GAUSC [default INFO] Joining overlay thread
+2026-07-22T01:01:02.586 GAUSC [default INFO] Joining eviction thread
+2026-07-22T01:01:02.586 GAUSC [default INFO] Joined all 12 threads
+2026-07-22T01:01:02.586 GAUSC [default INFO] Application destroyed
+Versao: v27.1.0
+Network: Test SDF Network ; September 2015
+Banco existente encontrado. Pulando inicializacao.
+=== Iniciando stellar-core (validador) ===
+P2P:  11625
+HTTP: 11626
+DB:   sqlite3:///opt/stellar/core/stellar.db
+Workdir: /opt/stellar/core
+Config: /opt/stellar/core/etc/stellar-core.cfg
+
+usage:
+  stellar-core COMMAND
+
+where COMMAND is one of following:
+  calculate-asset-supply            calculates total supply of an asset from
+                                    the live and hot archive bucket lists.
+                                    Also validates against totalCoins for
+                                    native asset. Uses the Native asset by
+                                    default if no input is provided.
+  catchup                           execute catchup from history archives
+                                    without connecting to network
+  check-quorum-intersection         check that a given network specified as a
+                                    JSON file enjoys a quorum intersection
+  convert-id                        displays ID in all known forms
+  diag-bucket-stats                 reports statistics on the content of a
+                                    bucket
+  dump-archival-stats               prints statistics about expired/evicted
+                                    entries in the BucketList
+  dump-ledger                       dumps the current ledger state as JSON
+                                    for debugging
+  dump-wasm                         dump WASM blobs from ledger, for
+                                    debugging
+  dump-xdr                          dump an XDR file, for debugging
+  encode-asset                      Print an encoded asset in base 64 for
+                                    debugging
+  force-scp                         deprecated, use --wait-for-consensus
+                                    option instead
+  gen-seed                          generate and print a random node seed
+  get-settings-upgrade-txs          returns all transactions that need to be
+                                    submitted to do a settings upgrade
+  help                              display list of available commands
+  http-command                      send a command to local stellar-core
+  merge-bucketlist                  writes diagnostic merged bucket list
+  new-db                            creates or restores the DB to the genesis
+                                    ledger
+  new-hist                          initialize history archives
+  offline-info                      return information for an offline
+                                    instance
+  print-publish-queue               print all checkpoints scheduled for
+                                    publish
+  print-xdr                         pretty-print one XDR envelope, then quit
+  publish                           execute publish of all items remaining in
+                                    publish queue without connecting to
+                                    network, may not publish last checkpoint
+                                    if last closed ledger is on checkpoint
+                                    boundary
+  replay-debug-meta                 apply ledgers from local debug metadata
+                                    files
+  report-last-history-checkpoint    report information about last checkpoint
+                                    available in history archives
+  run                               run stellar-core node
+  sec-to-pub                        print the public key corresponding to a
+                                    secret key
+  self-check                        performs diagnostic checks
+  sign-transaction                  add signature to transaction envelope,
+                                    then quit
+  upgrade-db                        upgrade database schema to current
+                                    version
+  verify-checkpoints                write verified checkpoint ledger hashes
+  version                           print version information
+=== Stellar Core Node - Inicializando ===
+Versao: v27.1.0
+Network: Test SDF Network ; September 2015
+Banco existente encontrado. Pulando inicializacao.
+=== Iniciando stellar-core (validador) ===
+P2P:  11625
+HTTP: 11626
+DB:   sqlite3:///opt/stellar/core/stellar.db
+Workdir: /opt/stellar/core
+Config: /opt/stellar/core/etc/stellar-core.cfg
+
+usage:
+  stellar-core COMMAND
+
+where COMMAND is one of following:
+  calculate-asset-supply            calculates total supply of an asset from
+                                    the live and hot archive bucket lists.
+                                    Also validates against totalCoins for
+                                    native asset. Uses the Native asset by
+                                    default if no input is provided.
+  catchup                           execute catchup from history archives
+                                    without connecting to network
+  check-quorum-intersection         check that a given network specified as a
+                                    JSON file enjoys a quorum intersection
+  convert-id                        displays ID in all known forms
+  diag-bucket-stats                 reports statistics on the content of a
+                                    bucket
+  dump-archival-stats               prints statistics about expired/evicted
+                                    entries in the BucketList
+  dump-ledger                       dumps the current ledger state as JSON
+                                    for debugging
+  dump-wasm                         dump WASM blobs from ledger, for
+                                    debugging
+  dump-xdr                          dump an XDR file, for debugging
+  encode-asset                      Print an encoded asset in base 64 for
+                                    debugging
+  force-scp                         deprecated, use --wait-for-consensus
+                                    option instead
+  gen-seed                          generate and print a random node seed
+  get-settings-upgrade-txs          returns all transactions that need to be
+                                    submitted to do a settings upgrade
+  help                              display list of available commands
+  http-command                      send a command to local stellar-core
+  merge-bucketlist                  writes diagnostic merged bucket list
+  new-db                            creates or restores the DB to the genesis
+                                    ledger
+  new-hist                          initialize history archives
+  offline-info                      return information for an offline
+                                    instance
+  print-publish-queue               print all checkpoints scheduled for
+                                    publish
+  print-xdr                         pretty-print one XDR envelope, then quit
+  publish                           execute publish of all items remaining in
+                                    publish queue without connecting to
+                                    network, may not publish last checkpoint
+                                    if last closed ledger is on checkpoint
+                                    boundary
+  replay-debug-meta                 apply ledgers from local debug metadata
+                                    files
+  report-last-history-checkpoint    report information about last checkpoint
+                                    available in history archives
+  run                               run stellar-core node
+  sec-to-pub                        print the public key corresponding to a
+                                    secret key
+  self-check                        performs diagnostic checks
+  sign-transaction                  add signature to transaction envelope,
+                                    then quit
+  upgrade-db                        upgrade database schema to current
+                                    version
+  verify-checkpoints                write verified checkpoint ledger hashes
+  version                           print version information
+=== Stellar Core Node - Inicializando ===
+Versao: v27.1.0
+Network: Test SDF Network ; September 2015
+Banco existente encontrado. Pulando inicializacao.
+=== Iniciando stellar-core (validador) ===
+P2P:  11625
+HTTP: 11626
+DB:   sqlite3:///opt/stellar/core/stellar.db
+Workdir: /opt/stellar/core
+Config: /opt/stellar/core/etc/stellar-core.cfg
+
+usage:
+  stellar-core COMMAND
+
+where COMMAND is one of following:
+  calculate-asset-supply            calculates total supply of an asset from
+                                    the live and hot archive bucket lists.
+                                    Also validates against totalCoins for
+                                    native asset. Uses the Native asset by
+                                    default if no input is provided.
+  catchup                           execute catchup from history archives
+                                    without connecting to network
+  check-quorum-intersection         check that a given network specified as a
+                                    JSON file enjoys a quorum intersection
+  convert-id                        displays ID in all known forms
+  diag-bucket-stats                 reports statistics on the content of a
+                                    bucket
+  dump-archival-stats               prints statistics about expired/evicted
+                                    entries in the BucketList
+  dump-ledger                       dumps the current ledger state as JSON
+                                    for debugging
+  dump-wasm                         dump WASM blobs from ledger, for
+                                    debugging
+  dump-xdr                          dump an XDR file, for debugging
+  encode-asset                      Print an encoded asset in base 64 for
+                                    debugging
+  force-scp                         deprecated, use --wait-for-consensus
+                                    option instead
+  gen-seed                          generate and print a random node seed
+  get-settings-upgrade-txs          returns all transactions that need to be
+                                    submitted to do a settings upgrade
+  help                              display list of available commands
+  http-command                      send a command to local stellar-core
+  merge-bucketlist                  writes diagnostic merged bucket list
+  new-db                            creates or restores the DB to the genesis
+                                    ledger
+  new-hist                          initialize history archives
+  offline-info                      return information for an offline
+                                    instance
+  print-publish-queue               print all checkpoints scheduled for
+                                    publish
+  print-xdr                         pretty-print one XDR envelope, then quit
+  publish                           execute publish of all items remaining in
+                                    publish queue without connecting to
+                                    network, may not publish last checkpoint
+                                    if last closed ledger is on checkpoint
+                                    boundary
+  replay-debug-meta                 apply ledgers from local debug metadata
+                                    files
+  report-last-history-checkpoint    report information about last checkpoint
+                                    available in history archives
+  run                               run stellar-core node
+  sec-to-pub                        print the public key corresponding to a
+                                    secret key
+  self-check                        performs diagnostic checks
+  sign-transaction                  add signature to transaction envelope,
+                                    then quit
+  upgrade-db                        upgrade database schema to current
+                                    version
+  verify-checkpoints                write verified checkpoint ledger hashes
+  version                           print version information
+=== Stellar Core Node - Inicializando ===
+Versao: v27.1.0
+Network: Test SDF Network ; September 2015
+Banco existente encontrado. Pulando inicializacao.
+=== Iniciando stellar-core (validador) ===
+P2P:  11625
+HTTP: 11626
+DB:   sqlite3:///opt/stellar/core/stellar.db
+Workdir: /opt/stellar/core
+Config: /opt/stellar/core/etc/stellar-core.cfg
+
+usage:
+  stellar-core COMMAND
+
+where COMMAND is one of following:
+  calculate-asset-supply            calculates total supply of an asset from
+                                    the live and hot archive bucket lists.
+                                    Also validates against totalCoins for
+                                    native asset. Uses the Native asset by
+                                    default if no input is provided.
+  catchup                           execute catchup from history archives
+                                    without connecting to network
+  check-quorum-intersection         check that a given network specified as a
+                                    JSON file enjoys a quorum intersection
+  convert-id                        displays ID in all known forms
+  diag-bucket-stats                 reports statistics on the content of a
+                                    bucket
+  dump-archival-stats               prints statistics about expired/evicted
+                                    entries in the BucketList
+  dump-ledger                       dumps the current ledger state as JSON
+                                    for debugging
+  dump-wasm                         dump WASM blobs from ledger, for
+                                    debugging
+  dump-xdr                          dump an XDR file, for debugging
+  encode-asset                      Print an encoded asset in base 64 for
+                                    debugging
+  force-scp                         deprecated, use --wait-for-consensus
+                                    option instead
+  gen-seed                          generate and print a random node seed
+  get-settings-upgrade-txs          returns all transactions that need to be
+                                    submitted to do a settings upgrade
+  help                              display list of available commands
+  http-command                      send a command to local stellar-core
+  merge-bucketlist                  writes diagnostic merged bucket list
+  new-db                            creates or restores the DB to the genesis
+                                    ledger
+  new-hist                          initialize history archives
+  offline-info                      return information for an offline
+                                    instance
+  print-publish-queue               print all checkpoints scheduled for
+                                    publish
+  print-xdr                         pretty-print one XDR envelope, then quit
+  publish                           execute publish of all items remaining in
+                                    publish queue without connecting to
+                                    network, may not publish last checkpoint
+                                    if last closed ledger is on checkpoint
+                                    boundary
+  replay-debug-meta                 apply ledgers from local debug metadata
+                                    files
+  report-last-history-checkpoint    report information about last checkpoint
+                                    available in history archives
+  run                               run stellar-core node
+  sec-to-pub                        print the public key corresponding to a
+                                    secret key
+  self-check                        performs diagnostic checks
+  sign-transaction                  add signature to transaction envelope,
+                                    then quit
+  upgrade-db                        upgrade database schema to current
+                                    version
+  verify-checkpoints                write verified checkpoint ledger hashes
+  version                           print version information
+=== Stellar Core Node - Inicializando ===
+Versao: v27.1.0
+Network: Test SDF Network ; September 2015
+Banco existente encontrado. Pulando inicializacao.
+=== Iniciando stellar-core (validador) ===
+P2P:  11625
+HTTP: 11626
+DB:   sqlite3:///opt/stellar/core/stellar.db
+Workdir: /opt/stellar/core
+Config: /opt/stellar/core/etc/stellar-core.cfg
+
+usage:
+  stellar-core COMMAND
+
+where COMMAND is one of following:
+  calculate-asset-supply            calculates total supply of an asset from
+                                    the live and hot archive bucket lists.
+                                    Also validates against totalCoins for
+                                    native asset. Uses the Native asset by
+                                    default if no input is provided.
+  catchup                           execute catchup from history archives
+                                    without connecting to network
+  check-quorum-intersection         check that a given network specified as a
+                                    JSON file enjoys a quorum intersection
+  convert-id                        displays ID in all known forms
+  diag-bucket-stats                 reports statistics on the content of a
+                                    bucket
+  dump-archival-stats               prints statistics about expired/evicted
+                                    entries in the BucketList
+  dump-ledger                       dumps the current ledger state as JSON
+                                    for debugging
+  dump-wasm                         dump WASM blobs from ledger, for
+                                    debugging
+  dump-xdr                          dump an XDR file, for debugging
+  encode-asset                      Print an encoded asset in base 64 for
+                                    debugging
+  force-scp                         deprecated, use --wait-for-consensus
+                                    option instead
+  gen-seed                          generate and print a random node seed
+  get-settings-upgrade-txs          returns all transactions that need to be
+                                    submitted to do a settings upgrade
+  help                              display list of available commands
+  http-command                      send a command to local stellar-core
+  merge-bucketlist                  writes diagnostic merged bucket list
+  new-db                            creates or restores the DB to the genesis
+                                    ledger
+  new-hist                          initialize history archives
+  offline-info                      return information for an offline
+                                    instance
+  print-publish-queue               print all checkpoints scheduled for
+                                    publish
+  print-xdr                         pretty-print one XDR envelope, then quit
+  publish                           execute publish of all items remaining in
+                                    publish queue without connecting to
+                                    network, may not publish last checkpoint
+                                    if last closed ledger is on checkpoint
+                                    boundary
+  replay-debug-meta                 apply ledgers from local debug metadata
+                                    files
+  report-last-history-checkpoint    report information about last checkpoint
+                                    available in history archives
+  run                               run stellar-core node
+  sec-to-pub                        print the public key corresponding to a
+                                    secret key
+  self-check                        performs diagnostic checks
+  sign-transaction                  add signature to transaction envelope,
+                                    then quit
+  upgrade-db                        upgrade database schema to current
+                                    version
+  verify-checkpoints                write verified checkpoint ledger hashes
+  version                           print version information
+=== Stellar Core Node - Inicializando ===
+Versao: v27.1.0
+Network: Test SDF Network ; September 2015
+Banco existente encontrado. Pulando inicializacao.
+=== Iniciando stellar-core (validador) ===
+P2P:  11625
+HTTP: 11626
+DB:   sqlite3:///opt/stellar/core/stellar.db
+Workdir: /opt/stellar/core
+Config: /opt/stellar/core/etc/stellar-core.cfg
+
+usage:
+  stellar-core COMMAND
+
+where COMMAND is one of following:
+  calculate-asset-supply            calculates total supply of an asset from
+                                    the live and hot archive bucket lists.
+                                    Also validates against totalCoins for
+                                    native asset. Uses the Native asset by
+                                    default if no input is provided.
+  catchup                           execute catchup from history archives
+                                    without connecting to network
+  check-quorum-intersection         check that a given network specified as a
+                                    JSON file enjoys a quorum intersection
+  convert-id                        displays ID in all known forms
+  diag-bucket-stats                 reports statistics on the content of a
+                                    bucket
+  dump-archival-stats               prints statistics about expired/evicted
+                                    entries in the BucketList
+  dump-ledger                       dumps the current ledger state as JSON
+                                    for debugging
+  dump-wasm                         dump WASM blobs from ledger, for
+                                    debugging
+  dump-xdr                          dump an XDR file, for debugging
+  encode-asset                      Print an encoded asset in base 64 for
+                                    debugging
+  force-scp                         deprecated, use --wait-for-consensus
+                                    option instead
+  gen-seed                          generate and print a random node seed
+  get-settings-upgrade-txs          returns all transactions that need to be
+                                    submitted to do a settings upgrade
+  help                              display list of available commands
+  http-command                      send a command to local stellar-core
+  merge-bucketlist                  writes diagnostic merged bucket list
+  new-db                            creates or restores the DB to the genesis
+                                    ledger
+  new-hist                          initialize history archives
+  offline-info                      return information for an offline
+                                    instance
+  print-publish-queue               print all checkpoints scheduled for
+                                    publish
+  print-xdr                         pretty-print one XDR envelope, then quit
+  publish                           execute publish of all items remaining in
+                                    publish queue without connecting to
+                                    network, may not publish last checkpoint
+                                    if last closed ledger is on checkpoint
+                                    boundary
+  replay-debug-meta                 apply ledgers from local debug metadata
+                                    files
+  report-last-history-checkpoint    report information about last checkpoint
+                                    available in history archives
+  run                               run stellar-core node
+  sec-to-pub                        print the public key corresponding to a
+                                    secret key
+  self-check                        performs diagnostic checks
+  sign-transaction                  add signature to transaction envelope,
+                                    then quit
+  upgrade-db                        upgrade database schema to current
+                                    version
+  verify-checkpoints                write verified checkpoint ledger hashes
+  version                           print version information
+=== Stellar Core Node - Inicializando ===
+Versao: v27.1.0
+Network: Test SDF Network ; September 2015
+Banco existente encontrado. Pulando inicializacao.
+=== Iniciando stellar-core (validador) ===
+P2P:  11625
+HTTP: 11626
+DB:   sqlite3:///opt/stellar/core/stellar.db
+Workdir: /opt/stellar/core
+Config: /opt/stellar/core/etc/stellar-core.cfg
+
+usage:
+  stellar-core COMMAND
+
+where COMMAND is one of following:
+  calculate-asset-supply            calculates total supply of an asset from
+                                    the live and hot archive bucket lists.
+                                    Also validates against totalCoins for
+                                    native asset. Uses the Native asset by
+                                    default if no input is provided.
+  catchup                           execute catchup from history archives
+                                    without connecting to network
+  check-quorum-intersection         check that a given network specified as a
+                                    JSON file enjoys a quorum intersection
+  convert-id                        displays ID in all known forms
+  diag-bucket-stats                 reports statistics on the content of a
+                                    bucket
+  dump-archival-stats               prints statistics about expired/evicted
+                                    entries in the BucketList
+  dump-ledger                       dumps the current ledger state as JSON
+                                    for debugging
+  dump-wasm                         dump WASM blobs from ledger, for
+                                    debugging
+  dump-xdr                          dump an XDR file, for debugging
+  encode-asset                      Print an encoded asset in base 64 for
+                                    debugging
+  force-scp                         deprecated, use --wait-for-consensus
+                                    option instead
+  gen-seed                          generate and print a random node seed
+  get-settings-upgrade-txs          returns all transactions that need to be
+                                    submitted to do a settings upgrade
+  help                              display list of available commands
+  http-command                      send a command to local stellar-core
+  merge-bucketlist                  writes diagnostic merged bucket list
+  new-db                            creates or restores the DB to the genesis
+                                    ledger
+  new-hist                          initialize history archives
+  offline-info                      return information for an offline
+                                    instance
+  print-publish-queue               print all checkpoints scheduled for
+                                    publish
+  print-xdr                         pretty-print one XDR envelope, then quit
+  publish                           execute publish of all items remaining in
+                                    publish queue without connecting to
+                                    network, may not publish last checkpoint
+                                    if last closed ledger is on checkpoint
+                                    boundary
+  replay-debug-meta                 apply ledgers from local debug metadata
+                                    files
+  report-last-history-checkpoint    report information about last checkpoint
+                                    available in history archives
+  run                               run stellar-core node
+  sec-to-pub                        print the public key corresponding to a
+                                    secret key
+  self-check                        performs diagnostic checks
+  sign-transaction                  add signature to transaction envelope,
+                                    then quit
+  upgrade-db                        upgrade database schema to current
+                                    version
+  verify-checkpoints                write verified checkpoint ledger hashes
+  version                           print version information
+=== Stellar Core Node - Inicializando ===
+Versao: v27.1.0
+Network: Test SDF Network ; September 2015
+Banco existente encontrado. Pulando inicializacao.
+=== Iniciando stellar-core (validador) ===
+P2P:  11625
+HTTP: 11626
+DB:   sqlite3:///opt/stellar/core/stellar.db
+Workdir: /opt/stellar/core
+Config: /opt/stellar/core/etc/stellar-core.cfg
+
+usage:
+  stellar-core COMMAND
+
+where COMMAND is one of following:
+  calculate-asset-supply            calculates total supply of an asset from
+                                    the live and hot archive bucket lists.
+                                    Also validates against totalCoins for
+                                    native asset. Uses the Native asset by
+                                    default if no input is provided.
+  catchup                           execute catchup from history archives
+                                    without connecting to network
+  check-quorum-intersection         check that a given network specified as a
+                                    JSON file enjoys a quorum intersection
+  convert-id                        displays ID in all known forms
+  diag-bucket-stats                 reports statistics on the content of a
+                                    bucket
+  dump-archival-stats               prints statistics about expired/evicted
+                                    entries in the BucketList
+  dump-ledger                       dumps the current ledger state as JSON
+                                    for debugging
+  dump-wasm                         dump WASM blobs from ledger, for
+                                    debugging
+  dump-xdr                          dump an XDR file, for debugging
+  encode-asset                      Print an encoded asset in base 64 for
+                                    debugging
+  force-scp                         deprecated, use --wait-for-consensus
+                                    option instead
+  gen-seed                          generate and print a random node seed
+  get-settings-upgrade-txs          returns all transactions that need to be
+                                    submitted to do a settings upgrade
+  help                              display list of available commands
+  http-command                      send a command to local stellar-core
+  merge-bucketlist                  writes diagnostic merged bucket list
+  new-db                            creates or restores the DB to the genesis
+                                    ledger
+  new-hist                          initialize history archives
+  offline-info                      return information for an offline
+                                    instance
+  print-publish-queue               print all checkpoints scheduled for
+                                    publish
+  print-xdr                         pretty-print one XDR envelope, then quit
+  publish                           execute publish of all items remaining in
+                                    publish queue without connecting to
+                                    network, may not publish last checkpoint
+                                    if last closed ledger is on checkpoint
+                                    boundary
+  replay-debug-meta                 apply ledgers from local debug metadata
+                                    files
+  report-last-history-checkpoint    report information about last checkpoint
+                                    available in history archives
+  run                               run stellar-core node
+  sec-to-pub                        print the public key corresponding to a
+                                    secret key
+  self-check                        performs diagnostic checks
+  sign-transaction                  add signature to transaction envelope,
+                                    then quit
+  upgrade-db                        upgrade database schema to current
+                                    version
+  verify-checkpoints                write verified checkpoint ledger hashes
+  version                           print version information
+=== Stellar Core Node - Inicializando ===
+Versao: v27.1.0
+Network: Test SDF Network ; September 2015
+Banco existente encontrado. Pulando inicializacao.
+=== Iniciando stellar-core (validador) ===
+P2P:  11625
+HTTP: 11626
+DB:   sqlite3:///opt/stellar/core/stellar.db
+Workdir: /opt/stellar/core
+Config: /opt/stellar/core/etc/stellar-core.cfg
+
+usage:
+  stellar-core COMMAND
+
+where COMMAND is one of following:
+  calculate-asset-supply            calculates total supply of an asset from
+                                    the live and hot archive bucket lists.
+                                    Also validates against totalCoins for
+                                    native asset. Uses the Native asset by
+                                    default if no input is provided.
+  catchup                           execute catchup from history archives
+                                    without connecting to network
+  check-quorum-intersection         check that a given network specified as a
+                                    JSON file enjoys a quorum intersection
+  convert-id                        displays ID in all known forms
+  diag-bucket-stats                 reports statistics on the content of a
+                                    bucket
+  dump-archival-stats               prints statistics about expired/evicted
+                                    entries in the BucketList
+  dump-ledger                       dumps the current ledger state as JSON
+                                    for debugging
+  dump-wasm                         dump WASM blobs from ledger, for
+                                    debugging
+  dump-xdr                          dump an XDR file, for debugging
+  encode-asset                      Print an encoded asset in base 64 for
+                                    debugging
+  force-scp                         deprecated, use --wait-for-consensus
+                                    option instead
+  gen-seed                          generate and print a random node seed
+  get-settings-upgrade-txs          returns all transactions that need to be
+                                    submitted to do a settings upgrade
+  help                              display list of available commands
+  http-command                      send a command to local stellar-core
+  merge-bucketlist                  writes diagnostic merged bucket list
+  new-db                            creates or restores the DB to the genesis
+                                    ledger
+  new-hist                          initialize history archives
+  offline-info                      return information for an offline
+                                    instance
+  print-publish-queue               print all checkpoints scheduled for
+                                    publish
+  print-xdr                         pretty-print one XDR envelope, then quit
+  publish                           execute publish of all items remaining in
+                                    publish queue without connecting to
+                                    network, may not publish last checkpoint
+                                    if last closed ledger is on checkpoint
+                                    boundary
+  replay-debug-meta                 apply ledgers from local debug metadata
+                                    files
+  report-last-history-checkpoint    report information about last checkpoint
+                                    available in history archives
+  run                               run stellar-core node
+  sec-to-pub                        print the public key corresponding to a
+                                    secret key
+  self-check                        performs diagnostic checks
+  sign-transaction                  add signature to transaction envelope,
+                                    then quit
+  upgrade-db                        upgrade database schema to current
+                                    version
+  verify-checkpoints                write verified checkpoint ledger hashes
+  version                           print version information

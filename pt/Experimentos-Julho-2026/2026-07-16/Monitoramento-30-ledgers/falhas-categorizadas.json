@@ -1,0 +1,251 @@
+{
+  "categories": [
+    "PAYMENT_NOTRUST",
+    "PAYMENT_NODESTINATION",
+    "PAYMENT_UNDERFUNDED",
+    "SOROBAN_TRAPPED",
+    "txFeeBumpInnerFailed"
+  ],
+  "ledgers": [
+    {
+      "ledger": 3646628,
+      "PAYMENT_NOTRUST": 0,
+      "PAYMENT_NODESTINATION": 1,
+      "PAYMENT_UNDERFUNDED": 0,
+      "SOROBAN_TRAPPED": 0,
+      "txFeeBumpInnerFailed": 0
+    },
+    {
+      "ledger": 3646629,
+      "PAYMENT_NOTRUST": 2,
+      "PAYMENT_NODESTINATION": 0,
+      "PAYMENT_UNDERFUNDED": 0,
+      "SOROBAN_TRAPPED": 0,
+      "txFeeBumpInnerFailed": 0
+    },
+    {
+      "ledger": 3646630,
+      "PAYMENT_NOTRUST": 1,
+      "PAYMENT_NODESTINATION": 0,
+      "PAYMENT_UNDERFUNDED": 0,
+      "SOROBAN_TRAPPED": 0,
+      "txFeeBumpInnerFailed": 0
+    },
+    {
+      "ledger": 3646631,
+      "PAYMENT_NOTRUST": 0,
+      "PAYMENT_NODESTINATION": 0,
+      "PAYMENT_UNDERFUNDED": 0,
+      "SOROBAN_TRAPPED": 0,
+      "txFeeBumpInnerFailed": 0
+    },
+    {
+      "ledger": 3646632,
+      "PAYMENT_NOTRUST": 0,
+      "PAYMENT_NODESTINATION": 0,
+      "PAYMENT_UNDERFUNDED": 1,
+      "SOROBAN_TRAPPED": 0,
+      "txFeeBumpInnerFailed": 0
+    },
+    {
+      "ledger": 3646633,
+      "PAYMENT_NOTRUST": 1,
+      "PAYMENT_NODESTINATION": 1,
+      "PAYMENT_UNDERFUNDED": 0,
+      "SOROBAN_TRAPPED": 0,
+      "txFeeBumpInnerFailed": 0
+    },
+    {
+      "ledger": 3646634,
+      "PAYMENT_NOTRUST": 1,
+      "PAYMENT_NODESTINATION": 1,
+      "PAYMENT_UNDERFUNDED": 0,
+      "SOROBAN_TRAPPED": 0,
+      "txFeeBumpInnerFailed": 1
+    },
+    {
+      "ledger": 3646635,
+      "PAYMENT_NOTRUST": 1,
+      "PAYMENT_NODESTINATION": 0,
+      "PAYMENT_UNDERFUNDED": 0,
+      "SOROBAN_TRAPPED": 0,
+      "txFeeBumpInnerFailed": 0
+    },
+    {
+      "ledger": 3646636,
+      "PAYMENT_NOTRUST": 2,
+      "PAYMENT_NODESTINATION": 0,
+      "PAYMENT_UNDERFUNDED": 0,
+      "SOROBAN_TRAPPED": 0,
+      "txFeeBumpInnerFailed": 0
+    },
+    {
+      "ledger": 3646637,
+      "PAYMENT_NOTRUST": 1,
+      "PAYMENT_NODESTINATION": 0,
+      "PAYMENT_UNDERFUNDED": 0,
+      "SOROBAN_TRAPPED": 0,
+      "txFeeBumpInnerFailed": 0
+    },
+    {
+      "ledger": 3646638,
+      "PAYMENT_NOTRUST": 0,
+      "PAYMENT_NODESTINATION": 0,
+      "PAYMENT_UNDERFUNDED": 0,
+      "SOROBAN_TRAPPED": 0,
+      "txFeeBumpInnerFailed": 0
+    },
+    {
+      "ledger": 3646639,
+      "PAYMENT_NOTRUST": 1,
+      "PAYMENT_NODESTINATION": 0,
+      "PAYMENT_UNDERFUNDED": 0,
+      "SOROBAN_TRAPPED": 0,
+      "txFeeBumpInnerFailed": 0
+    },
+    {
+      "ledger": 3646640,
+      "PAYMENT_NOTRUST": 1,
+      "PAYMENT_NODESTINATION": 0,
+      "PAYMENT_UNDERFUNDED": 1,
+      "SOROBAN_TRAPPED": 2,
+      "txFeeBumpInnerFailed": 0
+    },
+    {
+      "ledger": 3646641,
+      "PAYMENT_NOTRUST": 0,
+      "PAYMENT_NODESTINATION": 1,
+      "PAYMENT_UNDERFUNDED": 1,
+      "SOROBAN_TRAPPED": 0,
+      "txFeeBumpInnerFailed": 0
+    },
+    {
+      "ledger": 3646642,
+      "PAYMENT_NOTRUST": 0,
+      "PAYMENT_NODESTINATION": 1,
+      "PAYMENT_UNDERFUNDED": 0,
+      "SOROBAN_TRAPPED": 0,
+      "txFeeBumpInnerFailed": 0
+    },
+    {
+      "ledger": 3646643,
+      "PAYMENT_NOTRUST": 2,
+      "PAYMENT_NODESTINATION": 0,
+      "PAYMENT_UNDERFUNDED": 0,
+      "SOROBAN_TRAPPED": 0,
+      "txFeeBumpInnerFailed": 0
+    },
+    {
+      "ledger": 3646644,
+      "PAYMENT_NOTRUST": 1,
+      "PAYMENT_NODESTINATION": 0,
+      "PAYMENT_UNDERFUNDED": 0,
+      "SOROBAN_TRAPPED": 0,
+      "txFeeBumpInnerFailed": 0
+    },
+    {
+      "ledger": 3646645,
+      "PAYMENT_NOTRUST": 1,
+      "PAYMENT_NODESTINATION": 0,
+      "PAYMENT_UNDERFUNDED": 1,
+      "SOROBAN_TRAPPED": 0,
+      "txFeeBumpInnerFailed": 0
+    },
+    {
+      "ledger": 3646646,
+      "PAYMENT_NOTRUST": 0,
+      "PAYMENT_NODESTINATION": 1,
+      "PAYMENT_UNDERFUNDED": 0,
+      "SOROBAN_TRAPPED": 0,
+      "txFeeBumpInnerFailed": 0
+    },
+    {
+      "ledger": 3646647,
+      "PAYMENT_NOTRUST": 1,
+      "PAYMENT_NODESTINATION": 0,
+      "PAYMENT_UNDERFUNDED": 0,
+      "SOROBAN_TRAPPED": 0,
+      "txFeeBumpInnerFailed": 0
+    },
+    {
+      "ledger": 3646648,
+      "PAYMENT_NOTRUST": 1,
+      "PAYMENT_NODESTINATION": 0,
+      "PAYMENT_UNDERFUNDED": 0,
+      "SOROBAN_TRAPPED": 0,
+      "txFeeBumpInnerFailed": 0
+    },
+    {
+      "ledger": 3646649,
+      "PAYMENT_NOTRUST": 1,
+      "PAYMENT_NODESTINATION": 0,
+      "PAYMENT_UNDERFUNDED": 0,
+      "SOROBAN_TRAPPED": 0,
+      "txFeeBumpInnerFailed": 0
+    },
+    {
+      "ledger": 3646650,
+      "PAYMENT_NOTRUST": 1,
+      "PAYMENT_NODESTINATION": 0,
+      "PAYMENT_UNDERFUNDED": 0,
+      "SOROBAN_TRAPPED": 0,
+      "txFeeBumpInnerFailed": 0
+    },
+    {
+      "ledger": 3646651,
+      "PAYMENT_NOTRUST": 2,
+      "PAYMENT_NODESTINATION": 0,
+      "PAYMENT_UNDERFUNDED": 0,
+      "SOROBAN_TRAPPED": 0,
+      "txFeeBumpInnerFailed": 0
+    },
+    {
+      "ledger": 3646652,
+      "PAYMENT_NOTRUST": 1,
+      "PAYMENT_NODESTINATION": 0,
+      "PAYMENT_UNDERFUNDED": 0,
+      "SOROBAN_TRAPPED": 0,
+      "txFeeBumpInnerFailed": 0
+    },
+    {
+      "ledger": 3646653,
+      "PAYMENT_NOTRUST": 2,
+      "PAYMENT_NODESTINATION": 0,
+      "PAYMENT_UNDERFUNDED": 1,
+      "SOROBAN_TRAPPED": 0,
+      "txFeeBumpInnerFailed": 0
+    },
+    {
+      "ledger": 3646654,
+      "PAYMENT_NOTRUST": 1,
+      "PAYMENT_NODESTINATION": 1,
+      "PAYMENT_UNDERFUNDED": 0,
+      "SOROBAN_TRAPPED": 0,
+      "txFeeBumpInnerFailed": 0
+    },
+    {
+      "ledger": 3646655,
+      "PAYMENT_NOTRUST": 0,
+      "PAYMENT_NODESTINATION": 1,
+      "PAYMENT_UNDERFUNDED": 0,
+      "SOROBAN_TRAPPED": 0,
+      "txFeeBumpInnerFailed": 0
+    },
+    {
+      "ledger": 3646656,
+      "PAYMENT_NOTRUST": 1,
+      "PAYMENT_NODESTINATION": 0,
+      "PAYMENT_UNDERFUNDED": 0,
+      "SOROBAN_TRAPPED": 0,
+      "txFeeBumpInnerFailed": 0
+    },
+    {
+      "ledger": 3646657,
+      "PAYMENT_NOTRUST": 0,
+      "PAYMENT_NODESTINATION": 0,
+      "PAYMENT_UNDERFUNDED": 0,
+      "SOROBAN_TRAPPED": 0,
+      "txFeeBumpInnerFailed": 0
+    }
+  ]
+}
